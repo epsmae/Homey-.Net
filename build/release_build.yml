@@ -2,7 +2,7 @@
 # Builds and tests the solution
 
 trigger:
-- master
+- none
 
 pool:
   vmImage: 'windows-latest'
@@ -31,4 +31,19 @@ steps:
     projects: '$(solution)'
     configuration: '$(buildConfiguration)'
 
+- task: DotNetCoreCLI@2
+  displayName: Pack
+  inputs:
+    command: 'pack'
+    packagesToPack: '**/Homey.Net.csproj'
+    versioningScheme: 'byPrereleaseNumber'
+    majorVersion: '1'
+    minorVersion: '0'
+    patchVersion: '0'
 
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/**/*.nupk'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
