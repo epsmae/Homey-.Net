@@ -19,18 +19,16 @@ variables:
 steps:
 
 - task: DotNetCoreCLI@2
+  displayName: Restore
   inputs:
     command: 'restore'
     projects: '$(solution)'
 
 - task: DotNetCoreCLI@2
+  displayName: Build
   inputs:
     command: 'build'
     projects: '$(solution)'
     configuration: '$(buildConfiguration)'
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'test'
-    projects: 'src/**/*.Test.csproj'
-    configuration: '$(buildConfiguration)'
+
