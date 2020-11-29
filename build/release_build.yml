@@ -1,0 +1,50 @@
+# Integration Build
+# Builds and tests the solution
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+  workspace:
+    clean: all
+
+variables:
+  solution: '**/Homey.Net.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+  System.Debug: true
+
+steps:
+
+- task: DotNetCoreCLI@2
+  displayName: Restore
+  inputs:
+    command: 'restore'
+    projects: '$(solution)'
+
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    command: 'build'
+    projects: '$(solution)'
+    configuration: '$(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: Pack
+  inputs:
+    command: 'pack'
+    configuration: '$(buildConfiguration)'
+    packagesToPack: '**/Homey.Net.csproj'
+    versioningScheme: 'byPrereleaseNumber'
+    majorVersion: '1'
+    minorVersion: '0'
+    patchVersion: '0'
+
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'

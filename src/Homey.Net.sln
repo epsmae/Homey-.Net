@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homey.Net", "Homey.Net\Homey.Net.csproj", "{B63F3A39-17FD-4B6A-AC6F-EB9674D0D933}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homey.Net.Test", "Homey.Net.Test\Homey.Net.Test.csproj", "{4EFD155A-F330-4F55-ADBD-581B462D0040}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B63F3A39-17FD-4B6A-AC6F-EB9674D0D933}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B63F3A39-17FD-4B6A-AC6F-EB9674D0D933}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B63F3A39-17FD-4B6A-AC6F-EB9674D0D933}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B63F3A39-17FD-4B6A-AC6F-EB9674D0D933}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EFD155A-F330-4F55-ADBD-581B462D0040}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EFD155A-F330-4F55-ADBD-581B462D0040}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EFD155A-F330-4F55-ADBD-581B462D0040}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EFD155A-F330-4F55-ADBD-581B462D0040}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7DB55C74-CD2A-4799-B3D4-A7BE2B8FA269}
+	EndGlobalSection
+EndGlobal
