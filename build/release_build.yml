@@ -1,0 +1,34 @@
+# Integration Build
+# Builds and tests the solution
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+  workspace:
+    clean: all
+
+variables:
+  solution: '**/Homey.Net.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+  System.Debug: true
+
+steps:
+
+- task: DotNetCoreCLI@2
+  displayName: Restore
+  inputs:
+    command: 'restore'
+    projects: '$(solution)'
+
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    command: 'build'
+    projects: '$(solution)'
+    configuration: '$(buildConfiguration)'
+
+
