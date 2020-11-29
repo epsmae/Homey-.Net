@@ -35,8 +35,10 @@ steps:
   displayName: Pack
   inputs:
     command: 'pack'
+    configuration: '$(buildConfiguration)'
     packagesToPack: '**/Homey.Net.csproj'
     versioningScheme: 'byPrereleaseNumber'
+    nobuild: true
     majorVersion: '1'
     minorVersion: '0'
     patchVersion: '0'
@@ -44,6 +46,6 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
