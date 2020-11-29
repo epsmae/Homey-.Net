@@ -38,7 +38,6 @@ steps:
     configuration: '$(buildConfiguration)'
     packagesToPack: '**/Homey.Net.csproj'
     versioningScheme: 'byPrereleaseNumber'
-    nobuild: true
     majorVersion: '1'
     minorVersion: '0'
     patchVersion: '0'
