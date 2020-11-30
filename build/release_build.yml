@@ -13,10 +13,20 @@ variables:
   solution: '**/Homey.Net.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-
   System.Debug: true
 
 steps:
+
+- task: GitVersion@5
+  inputs:
+    runtime: 'core'
+    updateAssemblyInfo: true
+
+- script: echo %Action%%BuildVersion%
+  displayName: 'Set build version'
+  env:
+    Action: '##vso[build.updatebuildnumber]'
+    BuildVersion: $(GitVersion.SemVer)
 
 - task: DotNetCoreCLI@2
   displayName: Restore
@@ -32,16 +42,18 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
+  displayName: Test
+  inputs:
+    command: 'test'
+    projects: '**/*.Test.csproj'
+
+- task: DotNetCoreCLI@2
   displayName: Pack
   inputs:
     command: 'pack'
-    configuration: '$(buildConfiguration)'
     packagesToPack: '**/Homey.Net.csproj'
-    versioningScheme: 'byPrereleaseNumber'
-    majorVersion: '1'
-    minorVersion: '0'
-    patchVersion: '0'
-
+    configuration: '$(buildConfiguration)'
+    versioningScheme: 'off'
 
 - task: PublishBuildArtifacts@1
   inputs:

@@ -18,6 +18,19 @@ variables:
 
 steps:
 
+- task: GitVersion@5
+  inputs:
+    runtime: 'core'
+    updateAssemblyInfo: true
+
+
+- script: echo %Action%%BuildVersion%
+  displayName: 'Set build version'
+  env:
+    Action: '##vso[build.updatebuildnumber]'
+    BuildVersion: $(GitVersion.SemVer)
+
+
 - task: DotNetCoreCLI@2
   displayName: Restore
   inputs:
@@ -30,5 +43,12 @@ steps:
     command: 'build'
     projects: '$(solution)'
     configuration: '$(buildConfiguration)'
+
+
+- task: DotNetCoreCLI@2
+  displayName: Test
+  inputs:
+    command: 'test'
+    projects: '**/*.Test.csproj'
 
 
