@@ -1,0 +1,930 @@
+{
+	"99999999-f616-42fb-9bef-17ca6af0edef": {
+		"id": "99999999-f616-42fb-9bef-17ca6af0edef",
+		"name": "Na",
+		"enabled": true,
+		"folder": null,
+		"order": 1,
+		"trigger": {
+			"uri": "homey:manager:flow",
+			"id": "programmatic_trigger"
+		},
+		"conditions": [
+			{
+				"uri": "homey:manager:mobile",
+				"id": "push_confirm",
+				"group": "group1",
+				"args": {
+					"user": {
+						"name": "User_1",
+						"id": "99999999-e46a-43d1-b2fb-0943932c85fd",
+						"image": "https://api.athom.com/user/999999379422020c926c0946/avatar",
+						"athomId": "999999379422020c926c0946"
+					},
+					"text": "Message_1"
+				},
+				"delay": null,
+				"duration": null
+			}
+		],
+		"actions": [
+			{
+				"uri": "homey:manager:ledring",
+				"id": "show_animation",
+				"group": "then",
+				"args": {
+					"animation": "pulse",
+					"color": "#FF0000"
+				},
+				"delay": null,
+				"duration": {
+					"number": "10",
+					"multiplier": 1
+				}
+			}
+		],
+		"broken": false,
+		"triggerable": true,
+		"triggerCount": 0
+	},
+	"9999999-1845-4c9f-8f86-ee8e469c1edf": {
+		"id": "9999999-1845-4c9f-8f86-ee8e469c1edf",
+		"name": "Device abgeschaltet",
+		"enabled": true,
+		"folder": null,
+		"order": 3,
+		"trigger": {
+			"uri": "homey:device:99999999e-6eb0-4c6f-bcea-0f79d87acdff",
+			"id": "onoff_false"
+		},
+		"conditions": [],
+		"actions": [
+			{
+				"uri": "homey:manager:speech-output",
+				"id": "say",
+				"group": "then",
+				"args": {
+					"text": "Message_2"
+				},
+				"delay": null,
+				"duration": null
+			}
+		],
+		"broken": false,
+		"triggerable": true,
+		"triggerCount": 2
+	},
+	"99999999-1ecf-4806-abf2-64376bc1e27d": {
+		"id": "99999999-1ecf-4806-abf2-64376bc1e27d",
+		"name": "Na",
+		"enabled": true,
+		"folder": null,
+		"order": 4,
+		"trigger": {
+			"uri": "homey:manager:cron",
+			"id": "sunrise"
+		},
+		"conditions": [],
+		"actions": [
+			{
+				"uri": "homey:manager:mobile",
+				"id": "push_text",
+				"group": "then",
+				"args": {
+					"user": {
+						"name": "User_2",
+						"id": "99999999-19fe-4fa0-ae1a-b329824ccfe3",
+						"image": "https://api.athom.com/user/9999999958d3dc0c7f619144/avatar",
+						"athomId": "9999999958d3dc0c7f619144"
+					},
+					"text": "Draussen ist es[[homey:device:999999997-1a51-4bdd-8307-ee6422d648cd|measure_temperature]] °C, drinnen[[homey:device:999999990-21b1-4ef6-a8bc-dae3b2f27ddc|measure_temperature]] °C."
+				},
+				"delay": null,
+				"duration": null
+			}
+		],
+		"broken": false,
+		"triggerable": true,
+		"triggerCount": 28
+	},
+	"999999990-c5e9-499e-aa10-282f642dc644": {
+		"id": "999999990-c5e9-499e-aa10-282f642dc644",
+		"name": "Na",
+		"enabled": true,
+		"folder": null,
+		"order": 5,
+		"trigger": {
+			"uri": "homey:manager:flow",
+			"id": "programmatic_trigger"
+		},
+		"conditions": [],
+		"actions": [
+			{
+				"uri": "homey:manager:ledring",
+				"id": "show_animation",
+				"group": "then",
+				"args": {
+					"animation": "colorwipe",
+					"color": "#FF0000"
+				},
+				"delay": null,
+				"duration": {
+					"number": "5",
+					"multiplier": 1
+				}
+			},
+			{
+				"uri": "homey:device:999999998-4b51-4991-8a30-720131f7f108",
+				"id": "cloud_join_player",
+				"group": "then",
+				"args": {
+					"player": {
+						"id": "999999990-33cd-4ea6-b3d5-4fb30434e6fb",
+						"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+						"name": "Na",
+						"iconObj": {
+							"id": "f1c13ace9a2df8ef8e4ae08743a3a5c8",
+							"url": "/icon/f1c13ace9a2df8ef8e4ae08743a3a5c8/icon.svg"
+						}
+					}
+				}
+			},
+			{
+				"uri": "homey:device:999999990-33cd-4ea6-b3d5-4fb30434e6fb",
+				"id": "volume_set",
+				"group": "then",
+				"args": {
+					"volume_set": 0.1
+				}
+			},
+			{
+				"uri": "homey:device:999999990-33cd-4ea6-b3d5-4fb30434e6fb",
+				"id": "cloud_play_sonos_favorite",
+				"group": "then",
+				"args": {
+					"favorite": {
+						"id": "39",
+						"name": "Na",
+						"description": "TuneIn Sender",
+						"image": "http://cdn-radiotime-logos.tunein.com/s25077q.png"
+					}
+				}
+			}
+		],
+		"broken": false,
+		"triggerable": true,
+		"triggerCount": 0
+	},
+	"999999999-64b4-4672-a2c9-4b3b7ee309e3": {
+		"id": "999999999-64b4-4672-a2c9-4b3b7ee309e3",
+		"name": "Na",
+		"enabled": true,
+		"folder": null,
+		"order": 6,
+		"trigger": {
+			"uri": "homey:manager:flow",
+			"id": "programmatic_trigger"
+		},
+		"conditions": [],
+		"actions": [
+			{
+				"uri": "homey:manager:ledring",
+				"id": "show_animation",
+				"group": "then",
+				"args": {
+					"animation": "colorwipe",
+					"color": "#FF0000"
+				},
+				"delay": null,
+				"duration": {
+					"number": "5",
+					"multiplier": 1
+				}
+			},
+			{
+				"uri": "homey:device:999999998-4b51-4991-8a30-720131f7f108",
+				"id": "cloud_join_player",
+				"group": "then",
+				"args": {
+					"player": {
+						"id": "999999990-33cd-4ea6-b3d5-4fb30434e6fb",
+						"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+						"name": "Na",
+						"iconObj": {
+							"id": "f1c13ace9a2df8ef8e4ae08743a3a5c8",
+							"url": "/icon/f1c13ace9a2df8ef8e4ae08743a3a5c8/icon.svg"
+						}
+					}
+				}
+			},
+			{
+				"uri": "homey:device:999999990-33cd-4ea6-b3d5-4fb30434e6fb",
+				"id": "cloud_play_sonos_favorite",
+				"group": "then",
+				"args": {
+					"favorite": {
+						"id": "37",
+						"name": "HappyHits",
+						"description": "Spotify Playliste",
+						"image": "https://i.scdn.co/image/e1f63e54458b1b237aff4b58bdd21d719cd309e3"
+					}
+				}
+			},
+			{
+				"uri": "homey:device:999999990-33cd-4ea6-b3d5-4fb30434e6fb",
+				"id": "volume_set",
+				"group": "then",
+				"args": {
+					"volume_set": 0.1
+				}
+			}
+		],
+		"broken": false,
+		"triggerable": true,
+		"triggerCount": 0
+	},
+	"999999991-161c-4f19-bea0-e37d65b8f454": {
+		"id": "999999991-161c-4f19-bea0-e37d65b8f454",
+		"name": "Na",
+		"enabled": true,
+		"folder": null,
+		"order": 7,
+		"trigger": {
+			"uri": "homey:device:999999996-98ca-4524-8524-4a412152f7b4",
+			"id": "RWL000_on",
+			"args": {}
+		},
+		"conditions": [],
+		"actions": [
+			{
+				"uri": "homey:manager:flow",
+				"id": "programmatic_trigger",
+				"group": "then",
+				"args": {
+					"flow": {
+						"id": "999999999-64b4-4672-a2c9-4b3b7ee309e3",
+						"name": "Na"
+					}
+				},
+				"delay": null,
+				"duration": null
+			}
+		],
+		"broken": false,
+		"triggerable": true,
+		"triggerCount": 2
+	},
+	"99999999f-8b06-45f9-a49b-643235d92c74": {
+		"id": "99999999f-8b06-45f9-a49b-643235d92c74",
+		"name": "Na",
+		"enabled": true,
+		"folder": null,
+		"order": 8,
+		"trigger": {
+			"uri": "homey:device:999999996-98ca-4524-8524-4a412152f7b4",
+			"id": "RWL000_off",
+			"args": {}
+		},
+		"conditions": [],
+		"actions": [
+			{
+				"uri": "homey:manager:flow",
+				"id": "programmatic_trigger",
+				"group": "then",
+				"args": {
+					"flow": {
+						"id": "999999990-c5e9-499e-aa10-282f642dc644",
+						"name": "Na"
+					}
+				},
+				"delay": null,
+				"duration": null
+			}
+		],
+		"broken": false,
+		"triggerable": true,
+		"triggerCount": 2
+	},
+	"999999995-9c55-4608-b93d-e681aafe66a0": {
+		"id": "999999995-9c55-4608-b93d-e681aafe66a0",
+		"name": "Na",
+		"enabled": true,
+		"folder": null,
+		"order": 9,
+		"trigger": {
+			"uri": "homey:device:99999999a-d351-49b4-a13f-4b6e2ca41ccb",
+			"id": "ZRC-90_scene",
+			"args": {
+				"button": "1",
+				"scene": "Key Pressed 1 time"
+			},
+			"delay": null,
+			"duration": null
+		},
+		"conditions": [],
+		"actions": [
+			{
+				"uri": "homey:manager:ledring",
+				"id": "show_animation",
+				"group": "then",
+				"args": {
+					"animation": "colorwipe",
+					"color": "#FFC836"
+				},
+				"delay": null,
+				"duration": {
+					"number": "5",
+					"multiplier": 1
+				}
+			}
+		],
+		"broken": false,
+		"triggerable": true,
+		"triggerCount": 38
+	},
+	"999999998-e413-4b64-991c-7d81e3f35cb7": {
+		"id": "999999998-e413-4b64-991c-7d81e3f35cb7",
+		"name": "Na",
+		"enabled": true,
+		"folder": null,
+		"order": 10,
+		"trigger": {
+			"uri": "homey:device:99999999a-d351-49b4-a13f-4b6e2ca41ccb",
+			"id": "ZRC-90_scene",
+			"args": {
+				"button": "1",
+				"scene": "Key Pressed 1 time"
+			},
+			"delay": null,
+			"duration": null
+		},
+		"conditions": [],
+		"actions": [
+			{
+				"uri": "homey:manager:ledring",
+				"id": "show_animation",
+				"group": "then",
+				"args": {
+					"animation": "colorwipe",
+					"color": "#1EFE43"
+				},
+				"delay": null,
+				"duration": {
+					"number": "3",
+					"multiplier": 1
+				}
+			},
+			{
+				"uri": "homey:device:999999990-33cd-4ea6-b3d5-4fb30434e6fb",
+				"id": "cloud_play_sonos_favorite",
+				"group": "then",
+				"args": {
+					"favorite": {
+						"id": "39",
+						"name": "Na",
+						"description": "TuneIn Sender",
+						"image": "http://cdn-radiotime-logos.tunein.com/s25077q.png"
+					}
+				},
+				"delay": null,
+				"duration": null
+			}
+		],
+		"broken": false,
+		"triggerable": true,
+		"triggerCount": 37
+	},
+	"999999990-f3fd-43d7-8dc9-83c3bcda627f": {
+		"id": "999999990-f3fd-43d7-8dc9-83c3bcda627f",
+		"name": "Na",
+		"enabled": true,
+		"folder": null,
+		"order": 11,
+		"trigger": {
+			"uri": "homey:device:99999999a-d351-49b4-a13f-4b6e2ca41ccb",
+			"id": "ZRC-90_scene",
+			"args": {
+				"button": "2",
+				"scene": "Key Pressed 1 time"
+			},
+			"delay": null,
+			"duration": null
+		},
+		"conditions": [],
+		"actions": [
+			{
+				"uri": "homey:manager:ledring",
+				"id": "show_animation",
+				"group": "then",
+				"args": {
+					"animation": "colorwipe",
+					"color": "#1EFE43"
+				},
+				"delay": null,
+				"duration": {
+					"number": "3",
+					"multiplier": 1
+				}
+			},
+			{
+				"uri": "homey:device:999999990-33cd-4ea6-b3d5-4fb30434e6fb",
+				"id": "cloud_play_sonos_favorite",
+				"group": "then",
+				"args": {
+					"favorite": {
+						"id": "37",
+						"name": "HappyHits",
+						"description": "Spotify Playliste",
+						"image": "https://i.scdn.co/image/e1f63e54458b1b237aff4b58bdd21d719cd309e3"
+					}
+				},
+				"delay": null,
+				"duration": null
+			}
+		],
+		"broken": false,
+		"triggerable": true,
+		"triggerCount": 1
+	},
+	"999999992-ad4f-40c2-81a0-b0dbc01bf4ec": {
+		"id": "999999992-ad4f-40c2-81a0-b0dbc01bf4ec",
+		"name": "Na",
+		"enabled": true,
+		"folder": null,
+		"order": 12,
+		"trigger": {
+			"uri": "homey:device:99999999a-d351-49b4-a13f-4b6e2ca41ccb",
+			"id": "ZRC-90_scene",
+			"args": {
+				"button": "3",
+				"scene": "Key Pressed 1 time"
+			},
+			"delay": null,
+			"duration": null
+		},
+		"conditions": [],
+		"actions": [
+			{
+				"uri": "homey:manager:ledring",
+				"id": "show_animation",
+				"group": "then",
+				"args": {
+					"animation": "colorwipe",
+					"color": "#1EFE43"
+				},
+				"delay": null,
+				"duration": {
+					"number": "3",
+					"multiplier": 1
+				}
+			},
+			{
+				"uri": "homey:device:999999990-33cd-4ea6-b3d5-4fb30434e6fb",
+				"id": "cloud_play_sonos_favorite",
+				"group": "then",
+				"args": {
+					"favorite": {
+						"id": "36",
+						"name": "SRF 3",
+						"description": "TuneIn Sender",
+						"image": "http://cdn-radiotime-logos.tunein.com/s24862q.png"
+					}
+				},
+				"delay": null,
+				"duration": null
+			}
+		],
+		"broken": false,
+		"triggerable": true,
+		"triggerCount": 2
+	},
+	"99999999a-928e-4823-881a-5a77132b25b7": {
+		"id": "99999999a-928e-4823-881a-5a77132b25b7",
+		"name": "Na",
+		"enabled": true,
+		"folder": null,
+		"order": 13,
+		"trigger": {
+			"uri": "homey:device:99999999a-d351-49b4-a13f-4b6e2ca41ccb",
+			"id": "ZRC-90_scene",
+			"args": {
+				"button": "4",
+				"scene": "Key Pressed 1 time"
+			},
+			"delay": null,
+			"duration": null
+		},
+		"conditions": [],
+		"actions": [
+			{
+				"uri": "homey:manager:ledring",
+				"id": "show_animation",
+				"group": "then",
+				"args": {
+					"animation": "colorwipe",
+					"color": "#1EFE43"
+				},
+				"delay": null,
+				"duration": {
+					"number": "3",
+					"multiplier": 1
+				}
+			},
+			{
+				"uri": "homey:device:999999990-33cd-4ea6-b3d5-4fb30434e6fb",
+				"id": "cloud_play_sonos_favorite",
+				"group": "then",
+				"args": {
+					"favorite": {
+						"id": "42",
+						"name": "Kaffeehausmusik",
+						"description": "Spotify Playliste",
+						"image": "https://pl.scdn.co/images/pl/default/50f8fa0a913bc34fd7b2d6bf9b312a8dbf146470"
+					}
+				},
+				"delay": null,
+				"duration": null
+			}
+		],
+		"broken": false,
+		"triggerable": true,
+		"triggerCount": 7
+	},
+	"99999999b-50c6-437c-acca-17fbf3680196": {
+		"id": "99999999b-50c6-437c-acca-17fbf3680196",
+		"name": "Na",
+		"enabled": true,
+		"folder": null,
+		"order": 14,
+		"trigger": {
+			"uri": "homey:device:99999999a-d351-49b4-a13f-4b6e2ca41ccb",
+			"id": "ZRC-90_scene",
+			"args": {
+				"button": "5",
+				"scene": "Key Pressed 1 time"
+			},
+			"delay": null,
+			"duration": null
+		},
+		"conditions": [],
+		"actions": [
+			{
+				"uri": "homey:manager:ledring",
+				"id": "show_animation",
+				"group": "then",
+				"args": {
+					"animation": "colorwipe",
+					"color": "#1EFE43"
+				},
+				"delay": null,
+				"duration": {
+					"number": "3",
+					"multiplier": 1
+				}
+			},
+			{
+				"uri": "homey:device:99999999b-f459-4b23-a909-d497540a69db",
+				"id": "cloud_leave_current_group",
+				"args": {},
+				"group": "then"
+			},
+			{
+				"uri": "homey:device:999999990-33cd-4ea6-b3d5-4fb30434e6fb",
+				"id": "cloud_leave_current_group",
+				"args": {},
+				"group": "then"
+			},
+			{
+				"uri": "homey:device:999999998-4b51-4991-8a30-720131f7f108",
+				"id": "cloud_leave_current_group",
+				"args": {},
+				"group": "then"
+			},
+			{
+				"uri": "homey:device:999999990-6403-4506-a2ac-50f5c3f0238e",
+				"id": "cloud_leave_current_group",
+				"args": {},
+				"group": "then"
+			}
+		],
+		"broken": false,
+		"triggerable": true,
+		"triggerCount": 3
+	},
+	"999999990-9d39-4dc3-9d0b-e98fdf5fce3b": {
+		"id": "999999990-9d39-4dc3-9d0b-e98fdf5fce3b",
+		"name": "Na",
+		"enabled": true,
+		"folder": null,
+		"order": 15,
+		"trigger": {
+			"uri": "homey:device:99999999a-d351-49b4-a13f-4b6e2ca41ccb",
+			"id": "ZRC-90_scene",
+			"args": {
+				"button": "6",
+				"scene": "Key Pressed 1 time"
+			}
+		},
+		"conditions": [],
+		"actions": [
+			{
+				"uri": "homey:manager:ledring",
+				"id": "show_animation",
+				"group": "then",
+				"args": {
+					"animation": "colorwipe",
+					"color": "#1EFE43"
+				},
+				"delay": null,
+				"duration": {
+					"number": "3",
+					"multiplier": 1
+				}
+			},
+			{
+				"uri": "homey:device:999999998-4b51-4991-8a30-720131f7f108",
+				"id": "cloud_join_player",
+				"group": "then",
+				"args": {
+					"player": {
+						"id": "999999990-33cd-4ea6-b3d5-4fb30434e6fb",
+						"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+						"name": "Na",
+						"iconObj": {
+							"id": "f1c13ace9a2df8ef8e4ae08743a3a5c8",
+							"url": "/icon/f1c13ace9a2df8ef8e4ae08743a3a5c8/icon.svg"
+						}
+					}
+				}
+			}
+		],
+		"broken": false,
+		"triggerable": true,
+		"triggerCount": 5
+	},
+	"99999999c-59e0-481f-a0e9-c4b6c32227ea": {
+		"id": "99999999c-59e0-481f-a0e9-c4b6c32227ea",
+		"name": "Na",
+		"enabled": true,
+		"folder": null,
+		"order": 16,
+		"trigger": {
+			"uri": "homey:device:99999999a-d351-49b4-a13f-4b6e2ca41ccb",
+			"id": "ZRC-90_scene",
+			"args": {
+				"button": "7",
+				"scene": "Key Pressed 1 time"
+			},
+			"delay": null,
+			"duration": null
+		},
+		"conditions": [],
+		"actions": [
+			{
+				"uri": "homey:manager:ledring",
+				"id": "show_animation",
+				"group": "then",
+				"args": {
+					"animation": "colorwipe",
+					"color": "#fff"
+				},
+				"delay": null,
+				"duration": {
+					"number": "3",
+					"multiplier": 1
+				}
+			},
+			{
+				"uri": "homey:device:99999999b-f459-4b23-a909-d497540a69db",
+				"id": "cloud_join_player",
+				"group": "then",
+				"args": {
+					"player": {
+						"id": "999999990-33cd-4ea6-b3d5-4fb30434e6fb",
+						"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+						"name": "Na",
+						"iconObj": {
+							"id": "f1c13ace9a2df8ef8e4ae08743a3a5c8",
+							"url": "/icon/f1c13ace9a2df8ef8e4ae08743a3a5c8/icon.svg"
+						}
+					}
+				},
+				"delay": null,
+				"duration": null
+			},
+			{
+				"uri": "homey:device:999999990-6403-4506-a2ac-50f5c3f0238e",
+				"id": "cloud_join_player",
+				"group": "then",
+				"args": {
+					"player": {
+						"id": "999999990-33cd-4ea6-b3d5-4fb30434e6fb",
+						"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+						"name": "Na",
+						"iconObj": {
+							"id": "f1c13ace9a2df8ef8e4ae08743a3a5c8",
+							"url": "/icon/f1c13ace9a2df8ef8e4ae08743a3a5c8/icon.svg"
+						}
+					}
+				},
+				"delay": null,
+				"duration": null
+			},
+			{
+				"uri": "homey:device:999999998-4b51-4991-8a30-720131f7f108",
+				"id": "cloud_join_player",
+				"group": "then",
+				"args": {
+					"player": {
+						"id": "999999990-33cd-4ea6-b3d5-4fb30434e6fb",
+						"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+						"name": "Na",
+						"iconObj": {
+							"id": "f1c13ace9a2df8ef8e4ae08743a3a5c8",
+							"url": "/icon/f1c13ace9a2df8ef8e4ae08743a3a5c8/icon.svg"
+						}
+					}
+				},
+				"delay": null,
+				"duration": null
+			}
+		],
+		"broken": false,
+		"triggerable": true,
+		"triggerCount": 1
+	},
+	"99999999b-fe48-44b5-a887-fa191229870c": {
+		"id": "99999999b-fe48-44b5-a887-fa191229870c",
+		"name": "Na",
+		"enabled": true,
+		"folder": null,
+		"order": 17,
+		"trigger": {
+			"uri": "homey:manager:cron",
+			"id": "time_exactly",
+			"args": {
+				"time": "11:00"
+			}
+		},
+		"conditions": [
+			{
+				"uri": "homey:manager:cron",
+				"id": "day_equals",
+				"group": "group1",
+				"inverted": true,
+				"args": {
+					"day": "weekend"
+				},
+				"delay": null,
+				"duration": null
+			},
+			{
+				"uri": "homey:manager:cron",
+				"id": "day_equals",
+				"group": "group1",
+				"args": {
+					"day": "5"
+				},
+				"inverted": true,
+				"delay": null,
+				"duration": null
+			}
+		],
+		"actions": [
+			{
+				"uri": "homey:device:99999999f-5995-45ba-810d-37b1710acf46",
+				"id": "off",
+				"group": "then"
+			},
+			{
+				"uri": "homey:manager:ledring",
+				"id": "show_animation",
+				"group": "then",
+				"args": {
+					"animation": "pulse",
+					"color": "#fff"
+				},
+				"duration": {
+					"number": "5",
+					"multiplier": 1
+				}
+			}
+		],
+		"broken": false,
+		"triggerable": true,
+		"triggerCount": 1
+	},
+	"999999999-5956-4623-a544-fe73e77437e9": {
+		"id": "999999999-5956-4623-a544-fe73e77437e9",
+		"name": "Na",
+		"enabled": true,
+		"folder": null,
+		"order": 18,
+		"trigger": {
+			"uri": "homey:manager:cron",
+			"id": "time_exactly",
+			"args": {
+				"time": "12:00"
+			},
+			"delay": null,
+			"duration": null
+		},
+		"conditions": [
+			{
+				"uri": "homey:manager:cron",
+				"id": "day_equals",
+				"group": "group1",
+				"args": {
+					"day": "5"
+				},
+				"delay": null,
+				"duration": null
+			},
+			{
+				"uri": "homey:manager:cron",
+				"id": "day_equals",
+				"group": "group2",
+				"args": {
+					"day": "6"
+				},
+				"delay": null,
+				"duration": null
+			},
+			{
+				"uri": "homey:manager:cron",
+				"id": "day_equals",
+				"group": "group3",
+				"args": {
+					"day": "0"
+				},
+				"delay": null,
+				"duration": null
+			}
+		],
+		"actions": [
+			{
+				"uri": "homey:device:99999999f-5995-45ba-810d-37b1710acf46",
+				"id": "off",
+				"group": "then"
+			},
+			{
+				"uri": "homey:manager:ledring",
+				"id": "show_animation",
+				"group": "then",
+				"args": {
+					"animation": "pulse",
+					"color": "#fff"
+				},
+				"delay": null,
+				"duration": {
+					"number": "5",
+					"multiplier": 1
+				}
+			}
+		],
+		"broken": false,
+		"triggerable": true,
+		"triggerCount": 1
+	},
+	"999999993-f161-4941-9c3c-74d3f45a5e45": {
+		"id": "999999993-f161-4941-9c3c-74d3f45a5e45",
+		"name": "Na",
+		"enabled": true,
+		"folder": null,
+		"order": 19,
+		"trigger": {
+			"uri": "homey:manager:cron",
+			"id": "time_exactly",
+			"args": {
+				"time": "06:30"
+			},
+			"delay": null,
+			"duration": null
+		},
+		"conditions": [],
+		"actions": [
+			{
+				"uri": "homey:device:99999999f-5995-45ba-810d-37b1710acf46",
+				"id": "on",
+				"group": "then"
+			},
+			{
+				"uri": "homey:manager:ledring",
+				"id": "show_animation",
+				"group": "then",
+				"args": {
+					"animation": "pulse",
+					"color": "#fff"
+				},
+				"delay": null,
+				"duration": {
+					"number": "5",
+					"multiplier": 1
+				}
+			}
+		],
+		"broken": false,
+		"triggerable": true,
+		"triggerCount": 1
+	}
+}

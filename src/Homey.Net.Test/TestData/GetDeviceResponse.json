@@ -1,0 +1,275 @@
+{
+	"id": "999999997-64e8-45b4-93c5-346455b2346b",
+	"name": "Na",
+	"driverUri": "homey:app:com.aeotec",
+	"driverId": "ZW100",
+	"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+	"zoneName": "Na",
+	"icon": null,
+	"iconObj": {
+		"id": "3e2117854cd0aca7be51b370d10130ec",
+		"url": "/icon/3e2117854cd0aca7be51b370d10130ec/icon.svg"
+	},
+	"settings": {
+		"2": false,
+		"3": 240,
+		"4": "5",
+		"39": 20,
+		"40": true,
+		"41": 2,
+		"42": 10,
+		"43": 100,
+		"44": 10,
+		"45": 2,
+		"81": true,
+		"111": 600,
+		"201": 0,
+		"202": 0,
+		"203": 0,
+		"204": 0,
+		"zw_node_id": "9",
+		"zw_manufacturer_id": "134",
+		"zw_product_type_id": "2",
+		"zw_product_id": "100",
+		"zw_secure": "⨯",
+		"zw_battery": "⨯",
+		"zw_device_class_basic": "BASIC_TYPE_ROUTING_SLAVE",
+		"zw_device_class_generic": "GENERIC_TYPE_SENSOR_MULTILEVEL",
+		"zw_device_class_specific": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL",
+		"zw_firmware_id": "0",
+		"zw_application_version": "1",
+		"zw_application_sub_version": "7",
+		"zw_hardware_version": "100",
+		"zw_wakeup_interval": 3600,
+		"zw_wakeup_enabled": false,
+		"zw_group_1": "1",
+		"tamper_cancellation": 120,
+		"zw_configuration_value": ""
+	},
+	"settingsObj": true,
+	"class": "sensor",
+	"energy": null,
+	"energyObj": {
+		"W": null,
+		"batteries": [
+			"CR123A",
+			"CR123A"
+		],
+		"cumulative": null,
+		"generator": null
+	},
+	"virtualClass": null,
+	"capabilities": [
+		"measure_battery",
+		"alarm_motion",
+		"alarm_tamper",
+		"measure_temperature",
+		"measure_luminance",
+		"measure_humidity",
+		"measure_ultraviolet"
+	],
+	"capabilitiesObj": {
+		"measure_battery": {
+			"value": 100,
+			"lastUpdated": "2020-11-10T05:49:02.886Z",
+			"type": "number",
+			"getable": true,
+			"setable": false,
+			"title": "Batterie",
+			"desc": "Batteriestand in Prozent (%)",
+			"units": "%",
+			"decimals": 2,
+			"min": 0,
+			"max": 100,
+			"chartType": "spline",
+			"id": "measure_battery",
+			"options": {}
+		},
+		"alarm_motion": {
+			"value": true,
+			"lastUpdated": "2020-11-10T05:52:10.071Z",
+			"type": "boolean",
+			"getable": true,
+			"setable": false,
+			"title": "Bewegungs-Alarm",
+			"desc": null,
+			"units": null,
+			"id": "alarm_motion",
+			"options": {}
+		},
+		"alarm_tamper": {
+			"value": false,
+			"lastUpdated": "2020-11-04T16:10:03.531Z",
+			"type": "boolean",
+			"getable": true,
+			"setable": false,
+			"title": "Sabotage-Alarm",
+			"desc": "True, wenn Sabotage erkannt wurde",
+			"units": null,
+			"id": "alarm_tamper",
+			"options": {}
+		},
+		"measure_temperature": {
+			"value": 25.3,
+			"lastUpdated": "2020-11-10T05:25:52.187Z",
+			"type": "number",
+			"getable": true,
+			"setable": false,
+			"title": "Temperatur",
+			"desc": null,
+			"units": "°C",
+			"decimals": 2,
+			"chartType": "spline",
+			"id": "measure_temperature",
+			"options": {}
+		},
+		"measure_luminance": {
+			"value": 0,
+			"lastUpdated": "2020-11-10T04:51:34.117Z",
+			"type": "number",
+			"getable": true,
+			"setable": false,
+			"title": "Helligkeit",
+			"desc": "Leuchtkraft in Lux (lx)",
+			"units": "lx",
+			"decimals": 2,
+			"chartType": "spline",
+			"id": "measure_luminance",
+			"options": {}
+		},
+		"measure_humidity": {
+			"value": 52,
+			"lastUpdated": "2020-11-10T04:39:54.117Z",
+			"type": "number",
+			"getable": true,
+			"setable": false,
+			"title": "Luftfeuchtigkeit",
+			"desc": "Luftfeuchtigkeit in Prozent (%)",
+			"units": "%",
+			"decimals": 2,
+			"chartType": "spline",
+			"id": "measure_humidity",
+			"options": {}
+		},
+		"measure_ultraviolet": {
+			"value": 0,
+			"lastUpdated": "2020-11-10T04:28:37.195Z",
+			"type": "number",
+			"getable": true,
+			"setable": false,
+			"title": "Ultraviolett",
+			"desc": "Ultraviolett in UV-Index (UVI)",
+			"units": "UVI",
+			"decimals": 2,
+			"chartType": "spline",
+			"id": "measure_ultraviolet",
+			"options": {}
+		}
+	},
+	"flags": [
+		"zwave",
+		"zwaveRoot"
+	],
+	"ui": {
+		"components": [
+			{
+				"id": "sensor",
+				"capabilities": [
+					"alarm_motion",
+					"alarm_tamper",
+					"measure_temperature",
+					"measure_luminance",
+					"measure_humidity",
+					"measure_ultraviolet"
+				]
+			},
+			{
+				"id": "battery",
+				"capabilities": [
+					"measure_battery"
+				]
+			}
+		],
+		"componentsStartAt": 0
+	},
+	"ready": true,
+	"available": true,
+	"repair": false,
+	"unpair": true,
+	"speechExamples": [
+		"Was ist die durchschnittliche Temperatur zu Hause?",
+		"Was ist die durchschnittliche Luftfeuchtigkeit zu Hause?"
+	],
+	"images": [],
+	"insights": [
+		{
+			"uri": "homey:device:999999997-64e8-45b4-93c5-346455b2346b",
+			"id": "measure_battery",
+			"type": "number",
+			"title": "Batterie",
+			"titleTrue": null,
+			"titleFalse": null,
+			"units": "%"
+		},
+		{
+			"uri": "homey:device:999999997-64e8-45b4-93c5-346455b2346b",
+			"id": "alarm_motion",
+			"type": "boolean",
+			"title": "Bewegungs-Alarm",
+			"titleTrue": "Bewegungs-Alarm ist angegangen",
+			"titleFalse": "Bewegungs-Alarm ist ausgegangen",
+			"units": null,
+			"decimals": null
+		},
+		{
+			"uri": "homey:device:999999997-64e8-45b4-93c5-346455b2346b",
+			"id": "alarm_tamper",
+			"type": "boolean",
+			"title": "Sabotage-Alarm",
+			"titleTrue": "Sabotage-Alarm ist angegangen",
+			"titleFalse": "Sabotage-Alarm ist ausgegangen",
+			"units": null,
+			"decimals": null
+		},
+		{
+			"uri": "homey:device:999999997-64e8-45b4-93c5-346455b2346b",
+			"id": "measure_temperature",
+			"type": "number",
+			"title": "Temperatur",
+			"titleTrue": null,
+			"titleFalse": null,
+			"units": "°C"
+		},
+		{
+			"uri": "homey:device:999999997-64e8-45b4-93c5-346455b2346b",
+			"id": "measure_luminance",
+			"type": "number",
+			"title": "Helligkeit",
+			"titleTrue": null,
+			"titleFalse": null,
+			"units": "lx"
+		},
+		{
+			"uri": "homey:device:999999997-64e8-45b4-93c5-346455b2346b",
+			"id": "measure_humidity",
+			"type": "number",
+			"title": "Luftfeuchtigkeit",
+			"titleTrue": null,
+			"titleFalse": null,
+			"units": "%"
+		},
+		{
+			"uri": "homey:device:999999997-64e8-45b4-93c5-346455b2346b",
+			"id": "measure_ultraviolet",
+			"type": "number",
+			"title": "Ultraviolett",
+			"titleTrue": null,
+			"titleFalse": null,
+			"units": "UVI"
+		}
+	],
+	"color": "#00A2DA",
+	"data": {
+		"token": "999999990-e894-4787-b0a9-615e07ac6edd"
+	}
+}
