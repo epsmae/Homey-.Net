@@ -1,0 +1,110 @@
+{
+	"99999999-ffbc-480b-bc4b-77fb047e9e68": {
+		"id": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"name": "Na",
+		"order": 1,
+		"parent": null,
+		"active": true,
+		"activeLastUpdated": "2020-11-27T20:14:44.797Z",
+		"icon": "home"
+	},
+	"99999999-6d40-40a2-a0a4-17a0dd05003a": {
+		"id": "99999999-6d40-40a2-a0a4-17a0dd05003a",
+		"name": "Na",
+		"order": 4,
+		"parent": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"active": false,
+		"activeLastUpdated": null,
+		"icon": "stairs-down"
+	},
+	"99999999-a3a7-4513-9d96-902d81128f5c": {
+		"id": "99999999-a3a7-4513-9d96-902d81128f5c",
+		"name": "Na",
+		"order": 2,
+		"parent": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"active": false,
+		"activeLastUpdated": null,
+		"icon": "stairs-up"
+	},
+	"99999999-7349-4ff3-84b9-812e2d706e50": {
+		"id": "99999999-7349-4ff3-84b9-812e2d706e50",
+		"name": "Na",
+		"order": 3,
+		"parent": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"active": false,
+		"activeLastUpdated": null,
+		"icon": "roof"
+	},
+	"99999999-49ea-4033-8db0-105a3e982117": {
+		"id": "99999999-49ea-4033-8db0-105a3e982117",
+		"name": "Na",
+		"order": 2,
+		"parent": "99999999-f488-4223-b675-2f01270f573e",
+		"active": false,
+		"activeLastUpdated": null,
+		"icon": "living"
+	},
+	"99999999-0120-4c01-80f2-a237dcf4ba14": {
+		"id": "99999999-0120-4c01-80f2-a237dcf4ba14",
+		"name": "Na",
+		"order": 3,
+		"parent": "99999999-f488-4223-b675-2f01270f573e",
+		"active": false,
+		"activeLastUpdated": null,
+		"icon": "kitchen"
+	},
+	"99999999-8172-4c4a-97c9-22d8ec462972": {
+		"id": "99999999-8172-4c4a-97c9-22d8ec462972",
+		"name": "Na",
+		"order": 1,
+		"parent": "99999999-a3a7-4513-9d96-902d81128f5c",
+		"active": false,
+		"activeLastUpdated": null,
+		"icon": "bed"
+	},
+	"99999999-8e9c-49e7-aed8-9d5c93330126": {
+		"id": "99999999-8e9c-49e7-aed8-9d5c93330126",
+		"name": "Na",
+		"order": 5,
+		"parent": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"active": false,
+		"activeLastUpdated": null,
+		"icon": "garden"
+	},
+	"99999999-f488-4223-b675-2f01270f573e": {
+		"id": "99999999-f488-4223-b675-2f01270f573e",
+		"name": "Na",
+		"order": 1,
+		"parent": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"active": false,
+		"activeLastUpdated": null,
+		"icon": "default"
+	},
+	"99999999-26b2-4922-9ead-d20ee6695dd3": {
+		"id": "99999999-26b2-4922-9ead-d20ee6695dd3",
+		"name": "Na",
+		"order": 3,
+		"parent": "99999999-a3a7-4513-9d96-902d81128f5c",
+		"active": false,
+		"activeLastUpdated": null,
+		"icon": "shower"
+	},
+	"99999999-af06-4d53-a2c1-6f4c77e9eb4e": {
+		"id": "99999999-af06-4d53-a2c1-6f4c77e9eb4e",
+		"name": "Na",
+		"order": 2,
+		"parent": "99999999-a3a7-4513-9d96-902d81128f5c",
+		"active": false,
+		"activeLastUpdated": null,
+		"icon": "books"
+	},
+	"99999999-6475-4214-80d9-27125e39863a": {
+		"id": "99999999-6475-4214-80d9-27125e39863a",
+		"name": "Na",
+		"order": 1,
+		"parent": "99999999-f488-4223-b675-2f01270f573e",
+		"active": false,
+		"activeLastUpdated": null,
+		"icon": "default"
+	}
+}

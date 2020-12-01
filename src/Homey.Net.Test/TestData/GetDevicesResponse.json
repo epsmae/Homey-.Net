@@ -1,0 +1,2733 @@
+{
+	"99999999d-60c1-4b74-8a4c-3684b5ab5046": {
+		"id": "99999999d-60c1-4b74-8a4c-3684b5ab5046",
+		"name": "Office",
+		"driverUri": "homey:manager:vdevice",
+		"driverId": "homey",
+		"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"zoneName": "Na",
+		"icon": null,
+		"iconObj": {
+			"id": "8bfc56bdcbd3765104243d592496d247",
+			"url": "/icon/8bfc56bdcbd3765104243d592496d247/icon.svg"
+		},
+		"settings": {},
+		"settingsObj": false,
+		"class": "other",
+		"energy": null,
+		"energyObj": {
+			"W": 2,
+			"batteries": null,
+			"cumulative": null,
+			"generator": null
+		},
+		"virtualClass": null,
+		"capabilities": [
+			"measure_power"
+		],
+		"capabilitiesObj": {
+			"measure_power": {
+				"value": 2,
+				"lastUpdated": "2020-11-27T20:14:44.985Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Energie",
+				"desc": "Energie in Watt (W)",
+				"units": "W",
+				"decimals": 2,
+				"chartType": "stepLine",
+				"id": "measure_power",
+				"options": {
+					"approximated": true
+				}
+			}
+		},
+		"flags": [
+			"homey",
+			"sticky"
+		],
+		"ui": {
+			"components": [
+				{
+					"id": "sensor",
+					"capabilities": [
+						"measure_power"
+					]
+				}
+			],
+			"componentsStartAt": 0
+		},
+		"ready": true,
+		"available": true,
+		"repair": false,
+		"unpair": false,
+		"speechExamples": [],
+		"images": [],
+		"insights": [
+			{
+				"uri": "homey:device:99999999d-60c1-4b74-8a4c-3684b5ab5046",
+				"id": "measure_power",
+				"type": "number",
+				"title": "Energie",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "W"
+			},
+			{
+				"uri": "homey:device:99999999d-60c1-4b74-8a4c-3684b5ab5046",
+				"id": "energy_power",
+				"type": "number",
+				"title": "Power usage",
+				"units": "W",
+				"decimals": 2
+			}
+		],
+		"data": {}
+	},
+	"999999990-33cd-4ea6-b3d5-4fb30434e6fb": {
+		"id": "999999990-33cd-4ea6-b3d5-4fb30434e6fb",
+		"name": "Na",
+		"driverUri": "homey:app:com.sonos",
+		"driverId": "cloud",
+		"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"zoneName": "Na",
+		"icon": null,
+		"iconObj": {
+			"id": "f1c13ace9a2df8ef8e4ae08743a3a5c8",
+			"url": "/icon/f1c13ace9a2df8ef8e4ae08743a3a5c8/icon.svg"
+		},
+		"settings": {
+			"energy_value_constant": null
+		},
+		"settingsObj": true,
+		"class": "speaker",
+		"energy": null,
+		"energyObj": {
+			"W": null,
+			"batteries": null,
+			"cumulative": null,
+			"generator": null
+		},
+		"virtualClass": null,
+		"capabilities": [
+			"speaker_album",
+			"speaker_artist",
+			"speaker_duration",
+			"speaker_next",
+			"speaker_playing",
+			"speaker_position",
+			"speaker_prev",
+			"speaker_repeat",
+			"volume_set",
+			"volume_mute",
+			"speaker_shuffle",
+			"speaker_track",
+			"sonos_group",
+			"sonos_audio_clip"
+		],
+		"capabilitiesObj": {
+			"speaker_album": {
+				"value": null,
+				"lastUpdated": "2020-11-28T09:00:01.612Z",
+				"type": "string",
+				"getable": true,
+				"setable": false,
+				"title": "Album",
+				"desc": null,
+				"units": null,
+				"id": "speaker_album",
+				"options": {}
+			},
+			"speaker_artist": {
+				"value": null,
+				"lastUpdated": "2020-11-28T09:00:01.612Z",
+				"type": "string",
+				"getable": true,
+				"setable": false,
+				"title": "Künstler",
+				"desc": null,
+				"units": null,
+				"id": "speaker_artist",
+				"options": {}
+			},
+			"speaker_duration": {
+				"value": null,
+				"lastUpdated": "2020-11-28T09:00:01.613Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Länge",
+				"desc": null,
+				"units": null,
+				"id": "speaker_duration",
+				"options": {}
+			},
+			"speaker_next": {
+				"value": null,
+				"lastUpdated": null,
+				"type": "boolean",
+				"getable": false,
+				"setable": true,
+				"title": "Weiter",
+				"desc": null,
+				"units": null,
+				"id": "speaker_next",
+				"options": {}
+			},
+			"speaker_playing": {
+				"value": true,
+				"lastUpdated": "2020-11-28T09:00:01.448Z",
+				"type": "boolean",
+				"getable": true,
+				"setable": true,
+				"title": "Abspielen",
+				"desc": null,
+				"units": null,
+				"id": "speaker_playing",
+				"options": {}
+			},
+			"speaker_position": {
+				"value": null,
+				"lastUpdated": "2020-11-28T09:00:01.613Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Positiv",
+				"desc": null,
+				"units": null,
+				"id": "speaker_position",
+				"options": {}
+			},
+			"speaker_prev": {
+				"value": null,
+				"lastUpdated": null,
+				"type": "boolean",
+				"getable": false,
+				"setable": true,
+				"title": "Zurück",
+				"desc": null,
+				"units": null,
+				"id": "speaker_prev",
+				"options": {}
+			},
+			"speaker_repeat": {
+				"value": "none",
+				"lastUpdated": "2020-11-28T09:00:01.450Z",
+				"type": "enum",
+				"getable": true,
+				"setable": true,
+				"title": "Wiederholen",
+				"desc": null,
+				"units": null,
+				"values": [
+					{
+						"id": "none",
+						"title": "Aus"
+					},
+					{
+						"id": "track",
+						"title": "Titel wiederholen"
+					},
+					{
+						"id": "playlist",
+						"title": "Playlist wiederholen"
+					}
+				],
+				"id": "speaker_repeat",
+				"options": {}
+			},
+			"volume_set": {
+				"value": 0.09,
+				"lastUpdated": "2020-11-28T09:00:01.841Z",
+				"type": "number",
+				"getable": true,
+				"setable": true,
+				"title": "Lautstärke setzen",
+				"desc": "Lautstärke",
+				"units": null,
+				"decimals": 2,
+				"min": 0,
+				"max": 1,
+				"chartType": "stepLine",
+				"id": "volume_set",
+				"options": {}
+			},
+			"volume_mute": {
+				"value": false,
+				"lastUpdated": "2020-11-28T09:00:01.842Z",
+				"type": "boolean",
+				"getable": true,
+				"setable": true,
+				"title": "Lautstärke stumm",
+				"desc": null,
+				"units": null,
+				"id": "volume_mute",
+				"options": {}
+			},
+			"speaker_shuffle": {
+				"value": false,
+				"lastUpdated": "2020-11-28T09:00:01.450Z",
+				"type": "boolean",
+				"getable": true,
+				"setable": true,
+				"title": "Zufallswiedergabe",
+				"desc": null,
+				"units": null,
+				"id": "speaker_shuffle",
+				"options": {}
+			},
+			"speaker_track": {
+				"value": null,
+				"lastUpdated": "2020-11-28T09:00:01.609Z",
+				"type": "string",
+				"getable": true,
+				"setable": false,
+				"title": "Track",
+				"desc": null,
+				"units": null,
+				"id": "speaker_track",
+				"options": {}
+			},
+			"sonos_group": {
+				"value": "Na",
+				"lastUpdated": "2020-11-28T09:00:00.654Z",
+				"type": "string",
+				"getable": true,
+				"setable": false,
+				"title": "Sonos Group",
+				"desc": null,
+				"units": null,
+				"id": "sonos_group",
+				"options": {}
+			},
+			"sonos_audio_clip": {
+				"value": null,
+				"type": "string",
+				"getable": true,
+				"setable": false,
+				"title": "Sonos Audio Clip",
+				"desc": null,
+				"units": null,
+				"id": "sonos_audio_clip",
+				"options": {}
+			}
+		},
+		"flags": [],
+		"ui": {
+			"quickAction": "speaker_playing",
+			"components": [
+				{
+					"id": "media",
+					"capabilities": [
+						"speaker_album",
+						"speaker_artist",
+						"speaker_duration",
+						"speaker_next",
+						"speaker_playing",
+						"speaker_position",
+						"speaker_prev",
+						"speaker_repeat",
+						"speaker_shuffle",
+						"speaker_track"
+					]
+				},
+				{
+					"id": "slider",
+					"capabilities": [
+						"volume_set"
+					]
+				},
+				{
+					"id": "button",
+					"capabilities": [
+						"volume_mute"
+					]
+				},
+				{
+					"id": "sensor",
+					"capabilities": [
+						"sonos_group"
+					]
+				}
+			],
+			"componentsStartAt": 0
+		},
+		"ready": true,
+		"available": true,
+		"repair": false,
+		"unpair": false,
+		"unavailableMessage": null,
+		"speechExamples": [
+			"Drehe die Lautstärke meines Lautsprechers auf 50%",
+			"Die Lautstärke meines Verstärkers stummschalten"
+		],
+		"images": [
+			{
+				"type": "media",
+				"id": "albumart",
+				"title": "Illustration",
+				"imageObj": {
+					"id": "0c6efed1-3299-4d02-b4ed-0d8e4f62056e",
+					"ownerUri": "homey:app:com.sonos",
+					"url": "/image/0c6efed1-3299-4d02-b4ed-0d8e4f62056e/image",
+					"lastUpdated": "2020-11-28T09:00:01.612Z"
+				}
+			}
+		],
+		"insights": [],
+		"color": "#D8A158",
+		"data": {
+			"playerId": "RINCON_7828CA1A922401400",
+			"householdId": "Sonos_999999999IF8Loo50RQ7Vozqg.bhpeN62zkAufp-E1n3-O"
+		}
+	},
+	"999999998-4b51-4991-8a30-720131f7f108": {
+		"id": "999999998-4b51-4991-8a30-720131f7f108",
+		"name": "Na",
+		"driverUri": "homey:app:com.sonos",
+		"driverId": "cloud",
+		"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"zoneName": "Na",
+		"icon": null,
+		"iconObj": {
+			"id": "f1c13ace9a2df8ef8e4ae08743a3a5c8",
+			"url": "/icon/f1c13ace9a2df8ef8e4ae08743a3a5c8/icon.svg"
+		},
+		"settings": {
+			"energy_value_constant": null
+		},
+		"settingsObj": true,
+		"class": "speaker",
+		"energy": null,
+		"energyObj": {
+			"W": null,
+			"batteries": null,
+			"cumulative": null,
+			"generator": null
+		},
+		"virtualClass": null,
+		"capabilities": [
+			"speaker_album",
+			"speaker_artist",
+			"speaker_duration",
+			"speaker_next",
+			"speaker_playing",
+			"speaker_position",
+			"speaker_prev",
+			"speaker_repeat",
+			"volume_set",
+			"volume_mute",
+			"speaker_shuffle",
+			"speaker_track",
+			"sonos_group",
+			"sonos_line_in"
+		],
+		"capabilitiesObj": {
+			"speaker_album": {
+				"value": null,
+				"lastUpdated": "2020-11-28T09:00:02.341Z",
+				"type": "string",
+				"getable": true,
+				"setable": false,
+				"title": "Album",
+				"desc": null,
+				"units": null,
+				"id": "speaker_album",
+				"options": {}
+			},
+			"speaker_artist": {
+				"value": null,
+				"lastUpdated": "2020-11-28T09:00:02.340Z",
+				"type": "string",
+				"getable": true,
+				"setable": false,
+				"title": "Künstler",
+				"desc": null,
+				"units": null,
+				"id": "speaker_artist",
+				"options": {}
+			},
+			"speaker_duration": {
+				"value": null,
+				"lastUpdated": "2020-11-28T09:00:02.341Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Länge",
+				"desc": null,
+				"units": null,
+				"id": "speaker_duration",
+				"options": {}
+			},
+			"speaker_next": {
+				"value": null,
+				"lastUpdated": null,
+				"type": "boolean",
+				"getable": false,
+				"setable": true,
+				"title": "Weiter",
+				"desc": null,
+				"units": null,
+				"id": "speaker_next",
+				"options": {}
+			},
+			"speaker_playing": {
+				"value": false,
+				"lastUpdated": "2020-11-28T09:00:02.143Z",
+				"type": "boolean",
+				"getable": true,
+				"setable": true,
+				"title": "Abspielen",
+				"desc": null,
+				"units": null,
+				"id": "speaker_playing",
+				"options": {}
+			},
+			"speaker_position": {
+				"value": null,
+				"lastUpdated": "2020-11-28T09:00:02.341Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Positiv",
+				"desc": null,
+				"units": null,
+				"id": "speaker_position",
+				"options": {}
+			},
+			"speaker_prev": {
+				"value": null,
+				"lastUpdated": null,
+				"type": "boolean",
+				"getable": false,
+				"setable": true,
+				"title": "Zurück",
+				"desc": null,
+				"units": null,
+				"id": "speaker_prev",
+				"options": {}
+			},
+			"speaker_repeat": {
+				"value": "none",
+				"lastUpdated": "2020-11-28T09:00:02.145Z",
+				"type": "enum",
+				"getable": true,
+				"setable": true,
+				"title": "Wiederholen",
+				"desc": null,
+				"units": null,
+				"values": [
+					{
+						"id": "none",
+						"title": "Aus"
+					},
+					{
+						"id": "track",
+						"title": "Titel wiederholen"
+					},
+					{
+						"id": "playlist",
+						"title": "Playlist wiederholen"
+					}
+				],
+				"id": "speaker_repeat",
+				"options": {}
+			},
+			"volume_set": {
+				"value": 0.03,
+				"lastUpdated": "2020-11-28T09:00:02.621Z",
+				"type": "number",
+				"getable": true,
+				"setable": true,
+				"title": "Lautstärke setzen",
+				"desc": "Lautstärke",
+				"units": null,
+				"decimals": 2,
+				"min": 0,
+				"max": 1,
+				"chartType": "stepLine",
+				"id": "volume_set",
+				"options": {}
+			},
+			"volume_mute": {
+				"value": false,
+				"lastUpdated": "2020-11-28T09:00:02.623Z",
+				"type": "boolean",
+				"getable": true,
+				"setable": true,
+				"title": "Lautstärke stumm",
+				"desc": null,
+				"units": null,
+				"id": "volume_mute",
+				"options": {}
+			},
+			"speaker_shuffle": {
+				"value": false,
+				"lastUpdated": "2020-11-28T09:00:02.145Z",
+				"type": "boolean",
+				"getable": true,
+				"setable": true,
+				"title": "Zufallswiedergabe",
+				"desc": null,
+				"units": null,
+				"id": "speaker_shuffle",
+				"options": {}
+			},
+			"speaker_track": {
+				"value": null,
+				"lastUpdated": "2020-11-28T09:00:02.337Z",
+				"type": "string",
+				"getable": true,
+				"setable": false,
+				"title": "Track",
+				"desc": null,
+				"units": null,
+				"id": "speaker_track",
+				"options": {}
+			},
+			"sonos_group": {
+				"value": "Na",
+				"lastUpdated": "2020-11-28T09:00:00.896Z",
+				"type": "string",
+				"getable": true,
+				"setable": false,
+				"title": "Sonos Group",
+				"desc": null,
+				"units": null,
+				"id": "sonos_group",
+				"options": {}
+			},
+			"sonos_line_in": {
+				"value": null,
+				"type": "string",
+				"getable": true,
+				"setable": false,
+				"title": "Sonos Audio Clip",
+				"desc": null,
+				"units": null,
+				"id": "sonos_line_in",
+				"options": {}
+			}
+		},
+		"flags": [],
+		"ui": {
+			"quickAction": "speaker_playing",
+			"components": [
+				{
+					"id": "media",
+					"capabilities": [
+						"speaker_album",
+						"speaker_artist",
+						"speaker_duration",
+						"speaker_next",
+						"speaker_playing",
+						"speaker_position",
+						"speaker_prev",
+						"speaker_repeat",
+						"speaker_shuffle",
+						"speaker_track"
+					]
+				},
+				{
+					"id": "slider",
+					"capabilities": [
+						"volume_set"
+					]
+				},
+				{
+					"id": "button",
+					"capabilities": [
+						"volume_mute"
+					]
+				},
+				{
+					"id": "sensor",
+					"capabilities": [
+						"sonos_group"
+					]
+				}
+			],
+			"componentsStartAt": 0
+		},
+		"ready": true,
+		"available": true,
+		"repair": false,
+		"unpair": false,
+		"unavailableMessage": null,
+		"speechExamples": [
+			"Drehe die Lautstärke meines Lautsprechers auf 50%",
+			"Die Lautstärke meines Verstärkers stummschalten"
+		],
+		"images": [
+			{
+				"type": "media",
+				"id": "albumart",
+				"title": "Illustration",
+				"imageObj": {
+					"id": "e3d57c1c-d280-45bb-a8b8-e4b53c57b78c",
+					"ownerUri": "homey:app:com.sonos",
+					"url": "/image/e3d57c1c-d280-45bb-a8b8-e4b53c57b78c/image",
+					"lastUpdated": "2020-11-28T09:00:02.340Z"
+				}
+			}
+		],
+		"insights": [],
+		"color": "#D8A158",
+		"data": {
+			"playerId": "RINCON_B8E9372D3C5A01400",
+			"householdId": "Sonos_999999999IF8Loo50RQ7Vozqg.bhpeN62zkAufp-E1n3-O"
+		}
+	},
+	"999999990-6403-4506-a2ac-50f5c3f0238e": {
+		"id": "999999990-6403-4506-a2ac-50f5c3f0238e",
+		"name": "Office",
+		"driverUri": "homey:app:com.sonos",
+		"driverId": "cloud",
+		"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"zoneName": "Na",
+		"icon": null,
+		"iconObj": {
+			"id": "f1c13ace9a2df8ef8e4ae08743a3a5c8",
+			"url": "/icon/f1c13ace9a2df8ef8e4ae08743a3a5c8/icon.svg"
+		},
+		"settings": {
+			"energy_value_constant": null
+		},
+		"settingsObj": true,
+		"class": "speaker",
+		"energy": null,
+		"energyObj": {
+			"W": null,
+			"batteries": null,
+			"cumulative": null,
+			"generator": null
+		},
+		"virtualClass": null,
+		"capabilities": [
+			"speaker_album",
+			"speaker_artist",
+			"speaker_duration",
+			"speaker_next",
+			"speaker_playing",
+			"speaker_position",
+			"speaker_prev",
+			"speaker_repeat",
+			"volume_set",
+			"volume_mute",
+			"speaker_shuffle",
+			"speaker_track",
+			"sonos_group"
+		],
+		"capabilitiesObj": {
+			"speaker_album": {
+				"value": null,
+				"lastUpdated": "2020-11-28T09:00:04.591Z",
+				"type": "string",
+				"getable": true,
+				"setable": false,
+				"title": "Album",
+				"desc": null,
+				"units": null,
+				"id": "speaker_album",
+				"options": {}
+			},
+			"speaker_artist": {
+				"value": null,
+				"lastUpdated": "2020-11-28T09:00:04.591Z",
+				"type": "string",
+				"getable": true,
+				"setable": false,
+				"title": "Künstler",
+				"desc": null,
+				"units": null,
+				"id": "speaker_artist",
+				"options": {}
+			},
+			"speaker_duration": {
+				"value": null,
+				"lastUpdated": "2020-11-28T09:00:04.591Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Länge",
+				"desc": null,
+				"units": null,
+				"id": "speaker_duration",
+				"options": {}
+			},
+			"speaker_next": {
+				"value": null,
+				"lastUpdated": null,
+				"type": "boolean",
+				"getable": false,
+				"setable": true,
+				"title": "Weiter",
+				"desc": null,
+				"units": null,
+				"id": "speaker_next",
+				"options": {}
+			},
+			"speaker_playing": {
+				"value": false,
+				"lastUpdated": "2020-11-28T09:00:04.439Z",
+				"type": "boolean",
+				"getable": true,
+				"setable": true,
+				"title": "Abspielen",
+				"desc": null,
+				"units": null,
+				"id": "speaker_playing",
+				"options": {}
+			},
+			"speaker_position": {
+				"value": null,
+				"lastUpdated": "2020-11-28T09:00:04.592Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Positiv",
+				"desc": null,
+				"units": null,
+				"id": "speaker_position",
+				"options": {}
+			},
+			"speaker_prev": {
+				"value": null,
+				"lastUpdated": null,
+				"type": "boolean",
+				"getable": false,
+				"setable": true,
+				"title": "Zurück",
+				"desc": null,
+				"units": null,
+				"id": "speaker_prev",
+				"options": {}
+			},
+			"speaker_repeat": {
+				"value": "none",
+				"lastUpdated": "2020-11-28T09:00:04.441Z",
+				"type": "enum",
+				"getable": true,
+				"setable": true,
+				"title": "Wiederholen",
+				"desc": null,
+				"units": null,
+				"values": [
+					{
+						"id": "none",
+						"title": "Aus"
+					},
+					{
+						"id": "track",
+						"title": "Titel wiederholen"
+					},
+					{
+						"id": "playlist",
+						"title": "Playlist wiederholen"
+					}
+				],
+				"id": "speaker_repeat",
+				"options": {}
+			},
+			"volume_set": {
+				"value": 0.05,
+				"lastUpdated": "2020-11-28T09:00:04.725Z",
+				"type": "number",
+				"getable": true,
+				"setable": true,
+				"title": "Lautstärke setzen",
+				"desc": "Lautstärke",
+				"units": null,
+				"decimals": 2,
+				"min": 0,
+				"max": 1,
+				"chartType": "stepLine",
+				"id": "volume_set",
+				"options": {}
+			},
+			"volume_mute": {
+				"value": false,
+				"lastUpdated": "2020-11-28T09:00:04.726Z",
+				"type": "boolean",
+				"getable": true,
+				"setable": true,
+				"title": "Lautstärke stumm",
+				"desc": null,
+				"units": null,
+				"id": "volume_mute",
+				"options": {}
+			},
+			"speaker_shuffle": {
+				"value": false,
+				"lastUpdated": "2020-11-28T09:00:04.441Z",
+				"type": "boolean",
+				"getable": true,
+				"setable": true,
+				"title": "Zufallswiedergabe",
+				"desc": null,
+				"units": null,
+				"id": "speaker_shuffle",
+				"options": {}
+			},
+			"speaker_track": {
+				"value": null,
+				"lastUpdated": "2020-11-28T09:00:04.588Z",
+				"type": "string",
+				"getable": true,
+				"setable": false,
+				"title": "Track",
+				"desc": null,
+				"units": null,
+				"id": "speaker_track",
+				"options": {}
+			},
+			"sonos_group": {
+				"value": "Office",
+				"lastUpdated": "2020-11-28T09:00:01.036Z",
+				"type": "string",
+				"getable": true,
+				"setable": false,
+				"title": "Sonos Group",
+				"desc": null,
+				"units": null,
+				"id": "sonos_group",
+				"options": {}
+			}
+		},
+		"flags": [],
+		"ui": {
+			"quickAction": "speaker_playing",
+			"components": [
+				{
+					"id": "media",
+					"capabilities": [
+						"speaker_album",
+						"speaker_artist",
+						"speaker_duration",
+						"speaker_next",
+						"speaker_playing",
+						"speaker_position",
+						"speaker_prev",
+						"speaker_repeat",
+						"speaker_shuffle",
+						"speaker_track"
+					]
+				},
+				{
+					"id": "slider",
+					"capabilities": [
+						"volume_set"
+					]
+				},
+				{
+					"id": "button",
+					"capabilities": [
+						"volume_mute"
+					]
+				},
+				{
+					"id": "sensor",
+					"capabilities": [
+						"sonos_group"
+					]
+				}
+			],
+			"componentsStartAt": 0
+		},
+		"ready": true,
+		"available": true,
+		"repair": false,
+		"unpair": false,
+		"unavailableMessage": null,
+		"speechExamples": [
+			"Drehe die Lautstärke meines Lautsprechers auf 50%",
+			"Die Lautstärke meines Verstärkers stummschalten"
+		],
+		"images": [
+			{
+				"type": "media",
+				"id": "albumart",
+				"title": "Illustration",
+				"imageObj": {
+					"id": "c23a4b22-f697-494f-8476-302023b1e985",
+					"ownerUri": "homey:app:com.sonos",
+					"url": "/image/c23a4b22-f697-494f-8476-302023b1e985/image",
+					"lastUpdated": "2020-11-28T09:00:04.591Z"
+				}
+			}
+		],
+		"insights": [],
+		"color": "#D8A158",
+		"data": {
+			"playerId": "RINCON_949F3E1C282E01400",
+			"householdId": "Sonos_999999999IF8Loo50RQ7Vozqg.bhpeN62zkAufp-E1n3-O"
+		}
+	},
+	"99999999b-f459-4b23-a909-d497540a69db": {
+		"id": "99999999b-f459-4b23-a909-d497540a69db",
+		"name": "Office",
+		"driverUri": "homey:app:com.sonos",
+		"driverId": "cloud",
+		"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"zoneName": "Na",
+		"icon": null,
+		"iconObj": {
+			"id": "f1c13ace9a2df8ef8e4ae08743a3a5c8",
+			"url": "/icon/f1c13ace9a2df8ef8e4ae08743a3a5c8/icon.svg"
+		},
+		"settings": {
+			"energy_value_constant": null
+		},
+		"settingsObj": true,
+		"class": "speaker",
+		"energy": null,
+		"energyObj": {
+			"W": null,
+			"batteries": null,
+			"cumulative": null,
+			"generator": null
+		},
+		"virtualClass": null,
+		"capabilities": [
+			"speaker_album",
+			"speaker_artist",
+			"speaker_duration",
+			"speaker_next",
+			"speaker_playing",
+			"speaker_position",
+			"speaker_prev",
+			"speaker_repeat",
+			"volume_set",
+			"volume_mute",
+			"speaker_shuffle",
+			"speaker_track",
+			"sonos_group"
+		],
+		"capabilitiesObj": {
+			"speaker_album": {
+				"value": null,
+				"lastUpdated": "2020-11-27T20:14:57.853Z",
+				"type": "string",
+				"getable": true,
+				"setable": false,
+				"title": "Album",
+				"desc": null,
+				"units": null,
+				"id": "speaker_album",
+				"options": {}
+			},
+			"speaker_artist": {
+				"value": null,
+				"lastUpdated": "2020-11-27T20:14:57.853Z",
+				"type": "string",
+				"getable": true,
+				"setable": false,
+				"title": "Künstler",
+				"desc": null,
+				"units": null,
+				"id": "speaker_artist",
+				"options": {}
+			},
+			"speaker_duration": {
+				"value": null,
+				"lastUpdated": "2020-11-27T20:14:57.854Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Länge",
+				"desc": null,
+				"units": null,
+				"id": "speaker_duration",
+				"options": {}
+			},
+			"speaker_next": {
+				"value": null,
+				"lastUpdated": null,
+				"type": "boolean",
+				"getable": false,
+				"setable": true,
+				"title": "Weiter",
+				"desc": null,
+				"units": null,
+				"id": "speaker_next",
+				"options": {}
+			},
+			"speaker_playing": {
+				"value": false,
+				"lastUpdated": "2020-11-27T19:51:25.463Z",
+				"type": "boolean",
+				"getable": true,
+				"setable": true,
+				"title": "Abspielen",
+				"desc": null,
+				"units": null,
+				"id": "speaker_playing",
+				"options": {}
+			},
+			"speaker_position": {
+				"value": null,
+				"lastUpdated": "2020-11-27T20:14:57.854Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Positiv",
+				"desc": null,
+				"units": null,
+				"id": "speaker_position",
+				"options": {}
+			},
+			"speaker_prev": {
+				"value": null,
+				"lastUpdated": null,
+				"type": "boolean",
+				"getable": false,
+				"setable": true,
+				"title": "Zurück",
+				"desc": null,
+				"units": null,
+				"id": "speaker_prev",
+				"options": {}
+			},
+			"speaker_repeat": {
+				"value": "none",
+				"lastUpdated": "2020-11-27T19:51:25.465Z",
+				"type": "enum",
+				"getable": true,
+				"setable": true,
+				"title": "Wiederholen",
+				"desc": null,
+				"units": null,
+				"values": [
+					{
+						"id": "none",
+						"title": "Aus"
+					},
+					{
+						"id": "track",
+						"title": "Titel wiederholen"
+					},
+					{
+						"id": "playlist",
+						"title": "Playlist wiederholen"
+					}
+				],
+				"id": "speaker_repeat",
+				"options": {}
+			},
+			"volume_set": {
+				"value": 0.05,
+				"lastUpdated": "2020-11-27T19:51:25.791Z",
+				"type": "number",
+				"getable": true,
+				"setable": true,
+				"title": "Lautstärke setzen",
+				"desc": "Lautstärke",
+				"units": null,
+				"decimals": 2,
+				"min": 0,
+				"max": 1,
+				"chartType": "stepLine",
+				"id": "volume_set",
+				"options": {}
+			},
+			"volume_mute": {
+				"value": false,
+				"lastUpdated": "2020-11-27T19:51:25.791Z",
+				"type": "boolean",
+				"getable": true,
+				"setable": true,
+				"title": "Lautstärke stumm",
+				"desc": null,
+				"units": null,
+				"id": "volume_mute",
+				"options": {}
+			},
+			"speaker_shuffle": {
+				"value": false,
+				"lastUpdated": "2020-11-27T19:51:25.465Z",
+				"type": "boolean",
+				"getable": true,
+				"setable": true,
+				"title": "Zufallswiedergabe",
+				"desc": null,
+				"units": null,
+				"id": "speaker_shuffle",
+				"options": {}
+			},
+			"speaker_track": {
+				"value": null,
+				"lastUpdated": "2020-11-27T20:14:57.854Z",
+				"type": "string",
+				"getable": true,
+				"setable": false,
+				"title": "Track",
+				"desc": null,
+				"units": null,
+				"id": "speaker_track",
+				"options": {}
+			},
+			"sonos_group": {
+				"value": null,
+				"lastUpdated": "2020-11-28T09:00:01.222Z",
+				"type": "string",
+				"getable": true,
+				"setable": false,
+				"title": "Sonos Group",
+				"desc": null,
+				"units": null,
+				"id": "sonos_group",
+				"options": {}
+			}
+		},
+		"flags": [],
+		"ui": {
+			"quickAction": "speaker_playing",
+			"components": [
+				{
+					"id": "media",
+					"capabilities": [
+						"speaker_album",
+						"speaker_artist",
+						"speaker_duration",
+						"speaker_next",
+						"speaker_playing",
+						"speaker_position",
+						"speaker_prev",
+						"speaker_repeat",
+						"speaker_shuffle",
+						"speaker_track"
+					]
+				},
+				{
+					"id": "slider",
+					"capabilities": [
+						"volume_set"
+					]
+				},
+				{
+					"id": "button",
+					"capabilities": [
+						"volume_mute"
+					]
+				},
+				{
+					"id": "sensor",
+					"capabilities": [
+						"sonos_group"
+					]
+				}
+			],
+			"componentsStartAt": 0
+		},
+		"ready": true,
+		"available": true,
+		"repair": false,
+		"unpair": false,
+		"unavailableMessage": null,
+		"speechExamples": [
+			"Drehe die Lautstärke meines Lautsprechers auf 50%",
+			"Die Lautstärke meines Verstärkers stummschalten"
+		],
+		"images": [
+			{
+				"type": "media",
+				"id": "albumart",
+				"title": "Illustration",
+				"imageObj": {
+					"id": "2e990a6d-250e-4559-9bf9-576b20719e17",
+					"ownerUri": "homey:app:com.sonos",
+					"url": "/image/2e990a6d-250e-4559-9bf9-576b20719e17/image",
+					"lastUpdated": null
+				}
+			}
+		],
+		"insights": [],
+		"color": "#D8A158",
+		"data": {
+			"playerId": "RINCON_999999998AA01400",
+			"householdId": "Sonos_999999999IF8Loo50RQ7Vozqg.bhpeN62zkAufp-E1n3-O"
+		}
+	},
+	"999999990-21b1-4ef6-a8bc-dae3b2f27ddc": {
+		"id": "999999990-21b1-4ef6-a8bc-dae3b2f27ddc",
+		"name": "Na — Na",
+		"driverUri": "homey:app:com.netatmo",
+		"driverId": "weatherstation",
+		"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"zoneName": "Na",
+		"icon": null,
+		"iconObj": {
+			"id": "061b7f30155c372433aa9cfaf7c1152a",
+			"url": "/icon/061b7f30155c372433aa9cfaf7c1152a/icon.svg"
+		},
+		"settings": {
+			"energy_value_constant": null
+		},
+		"settingsObj": true,
+		"class": "sensor",
+		"energy": null,
+		"energyObj": {
+			"W": null,
+			"batteries": null,
+			"cumulative": null,
+			"generator": null
+		},
+		"virtualClass": null,
+		"capabilities": [
+			"measure_temperature",
+			"measure_co2",
+			"measure_humidity",
+			"measure_noise",
+			"measure_pressure"
+		],
+		"capabilitiesObj": {
+			"measure_temperature": {
+				"value": 22.6,
+				"lastUpdated": "2020-11-28T09:04:59.949Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Temperatur",
+				"desc": null,
+				"units": "°C",
+				"decimals": 2,
+				"chartType": "spline",
+				"id": "measure_temperature",
+				"options": {}
+			},
+			"measure_co2": {
+				"value": 1878,
+				"lastUpdated": "2020-11-28T09:04:59.951Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "CO2",
+				"desc": "CO2 in Anteile pro Million (ppm)",
+				"units": "ppm",
+				"decimals": 2,
+				"chartType": "spline",
+				"id": "measure_co2",
+				"options": {}
+			},
+			"measure_humidity": {
+				"value": 56,
+				"lastUpdated": "2020-11-28T09:04:59.956Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Luftfeuchtigkeit",
+				"desc": "Luftfeuchtigkeit in Prozent (%)",
+				"units": "%",
+				"decimals": 2,
+				"chartType": "spline",
+				"id": "measure_humidity",
+				"options": {}
+			},
+			"measure_noise": {
+				"value": 44,
+				"lastUpdated": "2020-11-28T09:04:59.958Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Lärm",
+				"desc": "Lärm in Dezibel (dB)",
+				"units": "dB",
+				"decimals": 2,
+				"chartType": "spline",
+				"id": "measure_noise",
+				"options": {}
+			},
+			"measure_pressure": {
+				"value": 1017.2,
+				"lastUpdated": "2020-11-28T09:04:59.958Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Druck",
+				"desc": "Druck in Millibar (mbar)",
+				"units": "mbar",
+				"decimals": 2,
+				"chartType": "spline",
+				"id": "measure_pressure",
+				"options": {}
+			}
+		},
+		"flags": [],
+		"ui": {
+			"components": [
+				{
+					"id": "sensor",
+					"capabilities": [
+						"measure_temperature",
+						"measure_co2",
+						"measure_humidity",
+						"measure_noise",
+						"measure_pressure"
+					]
+				}
+			],
+			"componentsStartAt": 0
+		},
+		"ready": true,
+		"available": true,
+		"repair": true,
+		"unpair": false,
+		"unavailableMessage": null,
+		"speechExamples": [
+			"Was ist die durchschnittliche Temperatur zu Hause?",
+			"Was ist die durchschnittliche Luftfeuchtigkeit zu Hause?"
+		],
+		"images": [],
+		"insights": [
+			{
+				"uri": "homey:device:999999990-21b1-4ef6-a8bc-dae3b2f27ddc",
+				"id": "measure_temperature",
+				"type": "number",
+				"title": "Temperatur",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "°C"
+			},
+			{
+				"uri": "homey:device:999999990-21b1-4ef6-a8bc-dae3b2f27ddc",
+				"id": "measure_co2",
+				"type": "number",
+				"title": "CO2",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "ppm"
+			},
+			{
+				"uri": "homey:device:999999990-21b1-4ef6-a8bc-dae3b2f27ddc",
+				"id": "measure_humidity",
+				"type": "number",
+				"title": "Luftfeuchtigkeit",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "%"
+			},
+			{
+				"uri": "homey:device:999999990-21b1-4ef6-a8bc-dae3b2f27ddc",
+				"id": "measure_noise",
+				"type": "number",
+				"title": "Lärm",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "dB"
+			},
+			{
+				"uri": "homey:device:999999990-21b1-4ef6-a8bc-dae3b2f27ddc",
+				"id": "measure_pressure",
+				"type": "number",
+				"title": "Druck",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "mbar"
+			}
+		],
+		"color": "#FB9041",
+		"data": {
+			"deviceId": "70:ee:50:53:1e:1c",
+			"moduleId": null
+		}
+	},
+	"999999997-1a51-4bdd-8307-ee6422d648cd": {
+		"id": "999999997-1a51-4bdd-8307-ee6422d648cd",
+		"name": "Na",
+		"driverUri": "homey:app:com.netatmo",
+		"driverId": "weatherstation",
+		"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"zoneName": "Na",
+		"icon": null,
+		"iconObj": {
+			"id": "061b7f30155c372433aa9cfaf7c1152a",
+			"url": "/icon/061b7f30155c372433aa9cfaf7c1152a/icon.svg"
+		},
+		"settings": {},
+		"settingsObj": false,
+		"class": "sensor",
+		"energy": null,
+		"energyObj": {
+			"W": null,
+			"batteries": null,
+			"cumulative": null,
+			"generator": null
+		},
+		"virtualClass": null,
+		"capabilities": [
+			"measure_temperature",
+			"measure_humidity",
+			"measure_battery"
+		],
+		"capabilitiesObj": {
+			"measure_temperature": {
+				"value": 1.1,
+				"lastUpdated": "2020-11-28T09:05:00.163Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Temperatur",
+				"desc": null,
+				"units": "°C",
+				"decimals": 2,
+				"chartType": "spline",
+				"id": "measure_temperature",
+				"options": {}
+			},
+			"measure_humidity": {
+				"value": 92,
+				"lastUpdated": "2020-11-28T09:05:00.169Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Luftfeuchtigkeit",
+				"desc": "Luftfeuchtigkeit in Prozent (%)",
+				"units": "%",
+				"decimals": 2,
+				"chartType": "spline",
+				"id": "measure_humidity",
+				"options": {}
+			},
+			"measure_battery": {
+				"value": 75,
+				"lastUpdated": "2020-11-28T09:05:00.169Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Batterie",
+				"desc": "Batteriestand in Prozent (%)",
+				"units": "%",
+				"decimals": 2,
+				"min": 0,
+				"max": 100,
+				"chartType": "spline",
+				"id": "measure_battery",
+				"options": {}
+			}
+		},
+		"flags": [],
+		"ui": {
+			"components": [
+				{
+					"id": "sensor",
+					"capabilities": [
+						"measure_temperature",
+						"measure_humidity"
+					]
+				},
+				{
+					"id": "battery",
+					"capabilities": [
+						"measure_battery"
+					]
+				}
+			],
+			"componentsStartAt": 0
+		},
+		"ready": true,
+		"available": true,
+		"repair": true,
+		"unpair": false,
+		"unavailableMessage": null,
+		"speechExamples": [
+			"Was ist die durchschnittliche Temperatur zu Hause?",
+			"Was ist die durchschnittliche Luftfeuchtigkeit zu Hause?"
+		],
+		"images": [],
+		"insights": [
+			{
+				"uri": "homey:device:999999997-1a51-4bdd-8307-ee6422d648cd",
+				"id": "measure_temperature",
+				"type": "number",
+				"title": "Temperatur",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "°C"
+			},
+			{
+				"uri": "homey:device:999999997-1a51-4bdd-8307-ee6422d648cd",
+				"id": "measure_humidity",
+				"type": "number",
+				"title": "Luftfeuchtigkeit",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "%"
+			},
+			{
+				"uri": "homey:device:999999997-1a51-4bdd-8307-ee6422d648cd",
+				"id": "measure_battery",
+				"type": "number",
+				"title": "Batterie",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "%"
+			}
+		],
+		"color": "#FB9041",
+		"data": {
+			"deviceId": "70:ee:50:53:1e:1c",
+			"moduleId": "02:00:00:52:e1:86"
+		}
+	},
+	"999999998-840f-4a35-b873-8bc73ee65c54": {
+		"id": "999999998-840f-4a35-b873-8bc73ee65c54",
+		"name": "Na",
+		"driverUri": "homey:app:com.netatmo",
+		"driverId": "weatherstation",
+		"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"zoneName": "Na",
+		"icon": null,
+		"iconObj": {
+			"id": "061b7f30155c372433aa9cfaf7c1152a",
+			"url": "/icon/061b7f30155c372433aa9cfaf7c1152a/icon.svg"
+		},
+		"settings": {},
+		"settingsObj": false,
+		"class": "sensor",
+		"energy": null,
+		"energyObj": {
+			"W": null,
+			"batteries": null,
+			"cumulative": null,
+			"generator": null
+		},
+		"virtualClass": null,
+		"capabilities": [
+			"measure_temperature",
+			"measure_co2",
+			"measure_humidity",
+			"measure_battery"
+		],
+		"capabilitiesObj": {
+			"measure_temperature": {
+				"value": 23.5,
+				"lastUpdated": "2020-11-28T09:05:00.404Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Temperatur",
+				"desc": null,
+				"units": "°C",
+				"decimals": 2,
+				"chartType": "spline",
+				"id": "measure_temperature",
+				"options": {}
+			},
+			"measure_co2": {
+				"value": 1218,
+				"lastUpdated": "2020-11-28T09:05:00.407Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "CO2",
+				"desc": "CO2 in Anteile pro Million (ppm)",
+				"units": "ppm",
+				"decimals": 2,
+				"chartType": "spline",
+				"id": "measure_co2",
+				"options": {}
+			},
+			"measure_humidity": {
+				"value": 54,
+				"lastUpdated": "2020-11-28T09:05:00.411Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Luftfeuchtigkeit",
+				"desc": "Luftfeuchtigkeit in Prozent (%)",
+				"units": "%",
+				"decimals": 2,
+				"chartType": "spline",
+				"id": "measure_humidity",
+				"options": {}
+			},
+			"measure_battery": {
+				"value": 5,
+				"lastUpdated": "2020-11-28T09:05:00.411Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Batterie",
+				"desc": "Batteriestand in Prozent (%)",
+				"units": "%",
+				"decimals": 2,
+				"min": 0,
+				"max": 100,
+				"chartType": "spline",
+				"id": "measure_battery",
+				"options": {}
+			}
+		},
+		"flags": [
+			"lowBattery"
+		],
+		"ui": {
+			"components": [
+				{
+					"id": "sensor",
+					"capabilities": [
+						"measure_temperature",
+						"measure_co2",
+						"measure_humidity"
+					]
+				},
+				{
+					"id": "battery",
+					"capabilities": [
+						"measure_battery"
+					]
+				}
+			],
+			"componentsStartAt": 0
+		},
+		"ready": true,
+		"available": true,
+		"repair": true,
+		"unpair": false,
+		"unavailableMessage": null,
+		"speechExamples": [
+			"Was ist die durchschnittliche Temperatur zu Hause?",
+			"Was ist die durchschnittliche Luftfeuchtigkeit zu Hause?"
+		],
+		"images": [],
+		"insights": [
+			{
+				"uri": "homey:device:999999998-840f-4a35-b873-8bc73ee65c54",
+				"id": "measure_temperature",
+				"type": "number",
+				"title": "Temperatur",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "°C"
+			},
+			{
+				"uri": "homey:device:999999998-840f-4a35-b873-8bc73ee65c54",
+				"id": "measure_co2",
+				"type": "number",
+				"title": "CO2",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "ppm"
+			},
+			{
+				"uri": "homey:device:999999998-840f-4a35-b873-8bc73ee65c54",
+				"id": "measure_humidity",
+				"type": "number",
+				"title": "Luftfeuchtigkeit",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "%"
+			},
+			{
+				"uri": "homey:device:999999998-840f-4a35-b873-8bc73ee65c54",
+				"id": "measure_battery",
+				"type": "number",
+				"title": "Batterie",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "%"
+			}
+		],
+		"color": "#FB9041",
+		"data": {
+			"deviceId": "70:ee:50:53:1e:1c",
+			"moduleId": "03:00:00:08:32:c6"
+		}
+	},
+	"99999999f-5995-45ba-810d-37b1710acf46": {
+		"id": "99999999f-5995-45ba-810d-37b1710acf46",
+		"name": "Na",
+		"driverUri": "homey:app:com.aeotec",
+		"driverId": "ZW075",
+		"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"zoneName": "Na",
+		"icon": null,
+		"iconObj": {
+			"id": "8de3c767296b46e0589ef780ea6926d9",
+			"url": "/icon/8de3c767296b46e0589ef780ea6926d9/icon.svg"
+		},
+		"settings": {
+			"3": true,
+			"20": "0",
+			"80": true,
+			"81": "0",
+			"91": 25,
+			"92": 30,
+			"102": "8",
+			"103": "0",
+			"111": 30,
+			"112": 600,
+			"113": 600,
+			"zw_node_id": "3",
+			"zw_manufacturer_id": "134",
+			"zw_product_type_id": "3",
+			"zw_product_id": "75",
+			"zw_secure": "✓",
+			"zw_battery": "⨯",
+			"zw_device_class_basic": "BASIC_TYPE_ROUTING_SLAVE",
+			"zw_device_class_generic": "GENERIC_TYPE_SWITCH_BINARY",
+			"zw_device_class_specific": "SPECIFIC_TYPE_POWER_SWITCH_BINARY",
+			"zw_firmware_id": "0",
+			"zw_application_version": "3",
+			"zw_application_sub_version": "25",
+			"zw_hardware_version": "75",
+			"zw_wakeup_interval": 0,
+			"zw_wakeup_enabled": false,
+			"zw_group_1": "1",
+			"zw_group_2": "1",
+			"energy_alwayson": false,
+			"zw_configuration_value": ""
+		},
+		"settingsObj": true,
+		"class": "socket",
+		"energy": null,
+		"energyObj": {
+			"W": 23.14,
+			"batteries": null,
+			"cumulative": null,
+			"generator": null
+		},
+		"virtualClass": null,
+		"capabilities": [
+			"measure_power",
+			"meter_power",
+			"onoff"
+		],
+		"capabilitiesObj": {
+			"measure_power": {
+				"value": 23.14,
+				"lastUpdated": "2020-11-27T20:16:52.291Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Energie",
+				"desc": "Energie in Watt (W)",
+				"units": "W",
+				"decimals": 2,
+				"chartType": "stepLine",
+				"id": "measure_power",
+				"options": {}
+			},
+			"meter_power": {
+				"value": 0.28,
+				"lastUpdated": "2020-11-28T09:09:24.678Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Energiezähler",
+				"desc": "Energieverbrauch in Kilowattstunde (kWh)",
+				"units": "KWh",
+				"decimals": 2,
+				"chartType": "spline",
+				"id": "meter_power",
+				"options": {}
+			},
+			"onoff": {
+				"value": true,
+				"lastUpdated": "2020-11-28T05:30:00.585Z",
+				"type": "boolean",
+				"getable": true,
+				"setable": true,
+				"title": "Eingeschaltet",
+				"desc": null,
+				"units": null,
+				"id": "onoff",
+				"options": {}
+			}
+		},
+		"flags": [
+			"zwave",
+			"zwaveRoot"
+		],
+		"ui": {
+			"quickAction": "onoff",
+			"components": [
+				{
+					"id": "toggle",
+					"capabilities": [
+						"onoff"
+					]
+				},
+				{
+					"id": "sensor",
+					"capabilities": [
+						"measure_power",
+						"meter_power"
+					]
+				}
+			],
+			"componentsStartAt": 1
+		},
+		"ready": true,
+		"available": true,
+		"repair": false,
+		"unpair": true,
+		"speechExamples": [
+			"Alle Lichter anschalten",
+			"Alle Geräte ausschalten",
+			"Alle Lichter an-/ausschalten"
+		],
+		"images": [],
+		"insights": [
+			{
+				"uri": "homey:device:99999999f-5995-45ba-810d-37b1710acf46",
+				"id": "measure_power",
+				"type": "number",
+				"title": "Energie",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "W"
+			},
+			{
+				"uri": "homey:device:99999999f-5995-45ba-810d-37b1710acf46",
+				"id": "meter_power",
+				"type": "number",
+				"title": "Energiezähler",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "KWh"
+			},
+			{
+				"uri": "homey:device:99999999f-5995-45ba-810d-37b1710acf46",
+				"id": "onoff",
+				"type": "boolean",
+				"title": "Eingeschaltet",
+				"titleTrue": "Eingeschaltet",
+				"titleFalse": "Ausgeschaltet",
+				"units": null,
+				"decimals": null
+			},
+			{
+				"uri": "homey:device:99999999f-5995-45ba-810d-37b1710acf46",
+				"id": "energy_power",
+				"type": "number",
+				"title": "Power usage",
+				"units": "W",
+				"decimals": 2
+			}
+		],
+		"color": "#00A2DA",
+		"data": {
+			"token": "999999997-e609-4186-9058-cb0ac0a43684"
+		}
+	},
+	"99999999e-6eb0-4c6f-bcea-0f79d87acdff": {
+		"id": "99999999e-6eb0-4c6f-bcea-0f79d87acdff",
+		"name": "Na",
+		"driverUri": "homey:app:com.samsung.smart",
+		"driverId": "Samsung",
+		"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"zoneName": "Na",
+		"icon": null,
+		"iconObj": {
+			"id": "04a41906757dcf21d301fe664282207d",
+			"url": "/icon/04a41906757dcf21d301fe664282207d/icon.svg"
+		},
+		"settings": {
+			"ipaddress": "192.168.1.96",
+			"tokenAuthSupport": false,
+			"frameTVSupport": false,
+			"poll_interval": 10,
+			"delay_keys": 100,
+			"delay_channel_keys": 1250,
+			"smartthings": false,
+			"smartthings_token": "",
+			"energy_value_off": null,
+			"energy_value_on": null,
+			"mac_address": "cc:b1:1a:b9:87:9a"
+		},
+		"settingsObj": true,
+		"class": "tv",
+		"energy": null,
+		"energyObj": {
+			"W": null,
+			"batteries": null,
+			"cumulative": null,
+			"generator": null
+		},
+		"virtualClass": null,
+		"capabilities": [
+			"onoff",
+			"volume_up",
+			"channel_up",
+			"volume_down",
+			"channel_down",
+			"volume_mute"
+		],
+		"capabilitiesObj": {
+			"onoff": {
+				"value": false,
+				"lastUpdated": "2020-10-31T19:38:51.118Z",
+				"type": "boolean",
+				"getable": true,
+				"setable": true,
+				"title": "Eingeschaltet",
+				"desc": null,
+				"units": null,
+				"id": "onoff",
+				"options": {}
+			},
+			"volume_up": {
+				"value": null,
+				"lastUpdated": null,
+				"type": "boolean",
+				"getable": false,
+				"setable": true,
+				"title": "Lautstärke hoch",
+				"desc": null,
+				"units": null,
+				"id": "volume_up",
+				"options": {}
+			},
+			"channel_up": {
+				"value": null,
+				"lastUpdated": null,
+				"type": "boolean",
+				"getable": false,
+				"setable": true,
+				"title": "Kanal hoch",
+				"desc": null,
+				"units": null,
+				"id": "channel_up",
+				"options": {}
+			},
+			"volume_down": {
+				"value": null,
+				"lastUpdated": null,
+				"type": "boolean",
+				"getable": false,
+				"setable": true,
+				"title": "Lautstärke runter",
+				"desc": null,
+				"units": null,
+				"id": "volume_down",
+				"options": {}
+			},
+			"channel_down": {
+				"value": null,
+				"lastUpdated": null,
+				"type": "boolean",
+				"getable": false,
+				"setable": true,
+				"title": "Kanal runter",
+				"desc": null,
+				"units": null,
+				"id": "channel_down",
+				"options": {}
+			},
+			"volume_mute": {
+				"value": null,
+				"lastUpdated": "2020-11-27T20:15:18.892Z",
+				"type": "boolean",
+				"getable": true,
+				"setable": true,
+				"title": "Lautstärke stumm",
+				"desc": null,
+				"units": null,
+				"id": "volume_mute",
+				"options": {}
+			}
+		},
+		"flags": [],
+		"ui": {
+			"quickAction": "onoff",
+			"components": [
+				{
+					"id": "toggle",
+					"capabilities": [
+						"onoff"
+					]
+				},
+				{
+					"id": "button",
+					"capabilities": [
+						"volume_up",
+						"channel_up",
+						"volume_down",
+						"channel_down",
+						"volume_mute"
+					]
+				}
+			],
+			"componentsStartAt": 1
+		},
+		"ready": true,
+		"available": true,
+		"repair": false,
+		"unpair": false,
+		"speechExamples": [
+			"Alle Lichter anschalten",
+			"Alle Geräte ausschalten",
+			"Alle Lichter an-/ausschalten",
+			"Dreh die Lautstärke meines Lautsprechers hoch",
+			"Schalte meinen TV zum nächsten Kanal",
+			"Dreh die Lautstärke meines Lautsprechers hoch",
+			"Schalte meinen TV auf den vorherigen Kanal",
+			"Die Lautstärke meines Verstärkers stummschalten"
+		],
+		"images": [],
+		"insights": [
+			{
+				"uri": "homey:device:99999999e-6eb0-4c6f-bcea-0f79d87acdff",
+				"id": "onoff",
+				"type": "boolean",
+				"title": "Eingeschaltet",
+				"titleTrue": "Eingeschaltet",
+				"titleFalse": "Ausgeschaltet",
+				"units": null,
+				"decimals": null
+			}
+		],
+		"color": "#206ADF",
+		"data": {
+			"id": "uuid:28946304-4587-40e3-9801-b8cae23de424"
+		}
+	},
+	"999999996-98ca-4524-8524-4a412152f7b4": {
+		"id": "999999996-98ca-4524-8524-4a412152f7b4",
+		"name": "Na",
+		"driverUri": "homey:app:com.philips.hue.zigbee",
+		"driverId": "RWL000",
+		"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"zoneName": "Na",
+		"icon": null,
+		"iconObj": {
+			"id": "16a50f983983aeb48802a3fbd8eafc02",
+			"url": "/icon/16a50f983983aeb48802a3fbd8eafc02/icon.svg"
+		},
+		"settings": {
+			"zb_profile_id": "49246",
+			"zb_device_id": "2096",
+			"zb_ieee_addr": "0x0017880104f7c2fd",
+			"zb_product_id": "RWL021",
+			"zb_manufacturer_name": "Philips",
+			"energy_value_constant": null
+		},
+		"settingsObj": true,
+		"class": "sensor",
+		"energy": null,
+		"energyObj": {
+			"W": null,
+			"batteries": [
+				"CR2450"
+			],
+			"cumulative": null,
+			"generator": null
+		},
+		"virtualClass": null,
+		"capabilities": [],
+		"capabilitiesObj": {},
+		"flags": [
+			"zigbee"
+		],
+		"ui": {},
+		"ready": true,
+		"available": true,
+		"repair": false,
+		"unpair": true,
+		"speechExamples": [],
+		"images": [],
+		"insights": [],
+		"color": "#20dfcb",
+		"data": {
+			"token": "999999993-b0b2-4ad4-8ae9-1cacc820f6cf"
+		}
+	},
+	"99999999c-5912-4498-8ba6-f5ee19e5cea3": {
+		"id": "99999999c-5912-4498-8ba6-f5ee19e5cea3",
+		"name": "Office",
+		"driverUri": "homey:app:com.philio",
+		"driverId": "PAT02-1B",
+		"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"zoneName": "Na",
+		"icon": null,
+		"iconObj": {
+			"id": "8c2926d319a1263878ecc7ea3927512d",
+			"url": "/icon/8c2926d319a1263878ecc7ea3927512d/icon.svg"
+		},
+		"settings": {
+			"zw_node_id": "6",
+			"zw_manufacturer_id": "316",
+			"zw_product_type_id": "2",
+			"zw_product_id": "32",
+			"zw_secure": "✓",
+			"zw_battery": "✓",
+			"zw_device_class_basic": "BASIC_TYPE_ROUTING_SLAVE",
+			"zw_device_class_generic": "GENERIC_TYPE_SENSOR_MULTILEVEL",
+			"zw_device_class_specific": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL",
+			"zw_firmware_id": "544",
+			"zw_application_version": "1",
+			"zw_application_sub_version": "14",
+			"zw_hardware_version": "1",
+			"zw_wakeup_interval": 86400,
+			"zw_wakeup_enabled": false,
+			"zw_application_version_1": "1",
+			"zw_application_sub_version_1": "12",
+			"zw_group_1": "1",
+			"operation_mode": "8",
+			"customer_function": 48,
+			"auto_report_battery_time": 12,
+			"auto_report_temperature_time": 12,
+			"auto_report_humidity_time": 12,
+			"auto_report_tick_interval": 30,
+			"temperature_differential_report": 1,
+			"humidity_differential_report": 5,
+			"tamper_cancellation": 120,
+			"zw_configuration_value": ""
+		},
+		"settingsObj": true,
+		"class": "sensor",
+		"energy": null,
+		"energyObj": {
+			"W": null,
+			"batteries": [
+				"CR123A"
+			],
+			"cumulative": null,
+			"generator": null
+		},
+		"virtualClass": null,
+		"capabilities": [
+			"measure_temperature",
+			"measure_humidity",
+			"measure_battery",
+			"alarm_tamper"
+		],
+		"capabilitiesObj": {
+			"measure_temperature": {
+				"value": 23.32,
+				"lastUpdated": "2020-11-28T08:25:23.982Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Temperatur",
+				"desc": null,
+				"units": "°C",
+				"decimals": 2,
+				"chartType": "spline",
+				"id": "measure_temperature",
+				"options": {}
+			},
+			"measure_humidity": {
+				"value": 58.56,
+				"lastUpdated": "2020-11-28T08:25:24.042Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Luftfeuchtigkeit",
+				"desc": "Luftfeuchtigkeit in Prozent (%)",
+				"units": "%",
+				"decimals": 2,
+				"chartType": "spline",
+				"id": "measure_humidity",
+				"options": {}
+			},
+			"measure_battery": {
+				"value": 100,
+				"lastUpdated": "2020-11-28T08:25:23.910Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Batterie",
+				"desc": "Batteriestand in Prozent (%)",
+				"units": "%",
+				"decimals": 2,
+				"min": 0,
+				"max": 100,
+				"chartType": "spline",
+				"id": "measure_battery",
+				"options": {}
+			},
+			"alarm_tamper": {
+				"value": null,
+				"lastUpdated": "2020-11-27T20:16:50.316Z",
+				"type": "boolean",
+				"getable": true,
+				"setable": false,
+				"title": "Sabotage-Alarm",
+				"desc": "True, wenn Sabotage erkannt wurde",
+				"units": null,
+				"id": "alarm_tamper",
+				"options": {}
+			}
+		},
+		"flags": [
+			"zwave",
+			"zwaveRoot"
+		],
+		"ui": {
+			"components": [
+				{
+					"id": "sensor",
+					"capabilities": [
+						"measure_temperature",
+						"measure_humidity",
+						"alarm_tamper"
+					]
+				},
+				{
+					"id": "battery",
+					"capabilities": [
+						"measure_battery"
+					]
+				}
+			],
+			"componentsStartAt": 0
+		},
+		"ready": true,
+		"available": true,
+		"repair": false,
+		"unpair": true,
+		"speechExamples": [
+			"Was ist die durchschnittliche Temperatur zu Hause?",
+			"Was ist die durchschnittliche Luftfeuchtigkeit zu Hause?"
+		],
+		"images": [],
+		"insights": [
+			{
+				"uri": "homey:device:99999999c-5912-4498-8ba6-f5ee19e5cea3",
+				"id": "measure_temperature",
+				"type": "number",
+				"title": "Temperatur",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "°C"
+			},
+			{
+				"uri": "homey:device:99999999c-5912-4498-8ba6-f5ee19e5cea3",
+				"id": "measure_humidity",
+				"type": "number",
+				"title": "Luftfeuchtigkeit",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "%"
+			},
+			{
+				"uri": "homey:device:99999999c-5912-4498-8ba6-f5ee19e5cea3",
+				"id": "measure_battery",
+				"type": "number",
+				"title": "Batterie",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "%"
+			},
+			{
+				"uri": "homey:device:99999999c-5912-4498-8ba6-f5ee19e5cea3",
+				"id": "alarm_tamper",
+				"type": "boolean",
+				"title": "Sabotage-Alarm",
+				"titleTrue": "Sabotage-Alarm ist angegangen",
+				"titleFalse": "Sabotage-Alarm ist ausgegangen",
+				"units": null,
+				"decimals": null
+			}
+		],
+		"color": "#009947",
+		"data": {
+			"token": "99999999d-a473-4386-86b2-4cce4b5b8cad"
+		}
+	},
+	"99999999a-d351-49b4-a13f-4b6e2ca41ccb": {
+		"id": "99999999a-d351-49b4-a13f-4b6e2ca41ccb",
+		"name": "Na",
+		"driverUri": "homey:app:hk.com.remotec",
+		"driverId": "ZRC-90",
+		"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"zoneName": "Na",
+		"icon": null,
+		"iconObj": {
+			"id": "829339946ffb540df2f03b9eac8a831f",
+			"url": "/icon/829339946ffb540df2f03b9eac8a831f/icon.svg"
+		},
+		"settings": {
+			"zw_node_id": "7",
+			"zw_manufacturer_id": "21076",
+			"zw_product_type_id": "1",
+			"zw_product_id": "34064",
+			"zw_secure": "⨯",
+			"zw_battery": "✓",
+			"zw_device_class_basic": "BASIC_TYPE_CONTROLLER",
+			"zw_device_class_generic": "GENERIC_TYPE_GENERIC_CONTROLLER",
+			"zw_device_class_specific": "SPECIFIC_TYPE_REMOTE_CONTROL_SIMPLE",
+			"zw_firmware_id": "",
+			"zw_application_version": "1",
+			"zw_application_sub_version": "1",
+			"zw_hardware_version": "3",
+			"zw_wakeup_interval": 0,
+			"zw_wakeup_enabled": false,
+			"zw_application_version_1": "1",
+			"zw_application_sub_version_1": "1",
+			"zw_group_1": "1"
+		},
+		"settingsObj": true,
+		"class": "sensor",
+		"energy": null,
+		"energyObj": {
+			"W": null,
+			"batteries": [
+				"AAA",
+				"AAA"
+			],
+			"cumulative": null,
+			"generator": null
+		},
+		"virtualClass": null,
+		"capabilities": [
+			"measure_battery",
+			"alarm_battery"
+		],
+		"capabilitiesObj": {
+			"measure_battery": {
+				"value": 96,
+				"lastUpdated": "2020-11-28T07:20:03.438Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Batterie",
+				"desc": "Batteriestand in Prozent (%)",
+				"units": "%",
+				"decimals": 2,
+				"min": 0,
+				"max": 100,
+				"chartType": "spline",
+				"id": "measure_battery",
+				"options": {}
+			},
+			"alarm_battery": {
+				"value": false,
+				"lastUpdated": "2020-11-28T07:20:03.436Z",
+				"type": "boolean",
+				"getable": true,
+				"setable": false,
+				"title": "Batterie-Alarm",
+				"desc": "True, wenn es eine Batterie-Warnung gibt",
+				"units": null,
+				"id": "alarm_battery",
+				"options": {}
+			}
+		},
+		"flags": [
+			"zwave",
+			"zwaveRoot"
+		],
+		"ui": {
+			"components": [
+				{
+					"id": "battery",
+					"capabilities": [
+						"measure_battery",
+						"alarm_battery"
+					]
+				}
+			],
+			"componentsStartAt": 0
+		},
+		"ready": true,
+		"available": true,
+		"repair": false,
+		"unpair": true,
+		"speechExamples": [],
+		"images": [],
+		"insights": [
+			{
+				"uri": "homey:device:99999999a-d351-49b4-a13f-4b6e2ca41ccb",
+				"id": "measure_battery",
+				"type": "number",
+				"title": "Batterie",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "%"
+			},
+			{
+				"uri": "homey:device:99999999a-d351-49b4-a13f-4b6e2ca41ccb",
+				"id": "alarm_battery",
+				"type": "boolean",
+				"title": "Batterie-Alarm",
+				"titleTrue": "Batterie-Alarm ist angegangen",
+				"titleFalse": "Batterie-Alarm ist ausgegangen",
+				"units": null,
+				"decimals": null
+			}
+		],
+		"color": "#cc3333",
+		"data": {
+			"token": "999999991-6eb4-4b93-bb48-04ae758df664"
+		}
+	},
+	"999999997-64e8-45b4-93c5-346455b2346b": {
+		"id": "999999997-64e8-45b4-93c5-346455b2346b",
+		"name": "Na",
+		"driverUri": "homey:app:com.aeotec",
+		"driverId": "ZW100",
+		"zone": "99999999-ffbc-480b-bc4b-77fb047e9e68",
+		"zoneName": "Na",
+		"icon": null,
+		"iconObj": {
+			"id": "3e2117854cd0aca7be51b370d10130ec",
+			"url": "/icon/3e2117854cd0aca7be51b370d10130ec/icon.svg"
+		},
+		"settings": {
+			"2": false,
+			"3": 240,
+			"4": "5",
+			"39": 20,
+			"40": true,
+			"41": 2,
+			"42": 10,
+			"43": 100,
+			"44": 10,
+			"45": 2,
+			"81": true,
+			"111": 600,
+			"201": 0,
+			"202": 0,
+			"203": 0,
+			"204": 0,
+			"zw_node_id": "9",
+			"zw_manufacturer_id": "134",
+			"zw_product_type_id": "2",
+			"zw_product_id": "100",
+			"zw_secure": "⨯",
+			"zw_battery": "⨯",
+			"zw_device_class_basic": "BASIC_TYPE_ROUTING_SLAVE",
+			"zw_device_class_generic": "GENERIC_TYPE_SENSOR_MULTILEVEL",
+			"zw_device_class_specific": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL",
+			"zw_firmware_id": "0",
+			"zw_application_version": "1",
+			"zw_application_sub_version": "7",
+			"zw_hardware_version": "100",
+			"zw_wakeup_interval": 3600,
+			"zw_wakeup_enabled": false,
+			"zw_group_1": "1",
+			"tamper_cancellation": 120,
+			"zw_configuration_value": ""
+		},
+		"settingsObj": true,
+		"class": "sensor",
+		"energy": null,
+		"energyObj": {
+			"W": null,
+			"batteries": [
+				"CR123A",
+				"CR123A"
+			],
+			"cumulative": null,
+			"generator": null
+		},
+		"virtualClass": null,
+		"capabilities": [
+			"measure_battery",
+			"alarm_motion",
+			"alarm_tamper",
+			"measure_temperature",
+			"measure_luminance",
+			"measure_humidity",
+			"measure_ultraviolet"
+		],
+		"capabilitiesObj": {
+			"measure_battery": {
+				"value": 100,
+				"lastUpdated": "2020-11-10T05:49:02.886Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Batterie",
+				"desc": "Batteriestand in Prozent (%)",
+				"units": "%",
+				"decimals": 2,
+				"min": 0,
+				"max": 100,
+				"chartType": "spline",
+				"id": "measure_battery",
+				"options": {}
+			},
+			"alarm_motion": {
+				"value": true,
+				"lastUpdated": "2020-11-10T05:52:10.071Z",
+				"type": "boolean",
+				"getable": true,
+				"setable": false,
+				"title": "Bewegungs-Alarm",
+				"desc": null,
+				"units": null,
+				"id": "alarm_motion",
+				"options": {}
+			},
+			"alarm_tamper": {
+				"value": false,
+				"lastUpdated": "2020-11-04T16:10:03.531Z",
+				"type": "boolean",
+				"getable": true,
+				"setable": false,
+				"title": "Sabotage-Alarm",
+				"desc": "True, wenn Sabotage erkannt wurde",
+				"units": null,
+				"id": "alarm_tamper",
+				"options": {}
+			},
+			"measure_temperature": {
+				"value": 25.3,
+				"lastUpdated": "2020-11-10T05:25:52.187Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Temperatur",
+				"desc": null,
+				"units": "°C",
+				"decimals": 2,
+				"chartType": "spline",
+				"id": "measure_temperature",
+				"options": {}
+			},
+			"measure_luminance": {
+				"value": 0,
+				"lastUpdated": "2020-11-10T04:51:34.117Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Helligkeit",
+				"desc": "Leuchtkraft in Lux (lx)",
+				"units": "lx",
+				"decimals": 2,
+				"chartType": "spline",
+				"id": "measure_luminance",
+				"options": {}
+			},
+			"measure_humidity": {
+				"value": 52,
+				"lastUpdated": "2020-11-10T04:39:54.117Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Luftfeuchtigkeit",
+				"desc": "Luftfeuchtigkeit in Prozent (%)",
+				"units": "%",
+				"decimals": 2,
+				"chartType": "spline",
+				"id": "measure_humidity",
+				"options": {}
+			},
+			"measure_ultraviolet": {
+				"value": 0,
+				"lastUpdated": "2020-11-10T04:28:37.195Z",
+				"type": "number",
+				"getable": true,
+				"setable": false,
+				"title": "Ultraviolett",
+				"desc": "Ultraviolett in UV-Index (UVI)",
+				"units": "UVI",
+				"decimals": 2,
+				"chartType": "spline",
+				"id": "measure_ultraviolet",
+				"options": {}
+			}
+		},
+		"flags": [
+			"zwave",
+			"zwaveRoot"
+		],
+		"ui": {
+			"components": [
+				{
+					"id": "sensor",
+					"capabilities": [
+						"alarm_motion",
+						"alarm_tamper",
+						"measure_temperature",
+						"measure_luminance",
+						"measure_humidity",
+						"measure_ultraviolet"
+					]
+				},
+				{
+					"id": "battery",
+					"capabilities": [
+						"measure_battery"
+					]
+				}
+			],
+			"componentsStartAt": 0
+		},
+		"ready": true,
+		"available": true,
+		"repair": false,
+		"unpair": true,
+		"speechExamples": [
+			"Was ist die durchschnittliche Temperatur zu Hause?",
+			"Was ist die durchschnittliche Luftfeuchtigkeit zu Hause?"
+		],
+		"images": [],
+		"insights": [
+			{
+				"uri": "homey:device:999999997-64e8-45b4-93c5-346455b2346b",
+				"id": "measure_battery",
+				"type": "number",
+				"title": "Batterie",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "%"
+			},
+			{
+				"uri": "homey:device:999999997-64e8-45b4-93c5-346455b2346b",
+				"id": "alarm_motion",
+				"type": "boolean",
+				"title": "Bewegungs-Alarm",
+				"titleTrue": "Bewegungs-Alarm ist angegangen",
+				"titleFalse": "Bewegungs-Alarm ist ausgegangen",
+				"units": null,
+				"decimals": null
+			},
+			{
+				"uri": "homey:device:999999997-64e8-45b4-93c5-346455b2346b",
+				"id": "alarm_tamper",
+				"type": "boolean",
+				"title": "Sabotage-Alarm",
+				"titleTrue": "Sabotage-Alarm ist angegangen",
+				"titleFalse": "Sabotage-Alarm ist ausgegangen",
+				"units": null,
+				"decimals": null
+			},
+			{
+				"uri": "homey:device:999999997-64e8-45b4-93c5-346455b2346b",
+				"id": "measure_temperature",
+				"type": "number",
+				"title": "Temperatur",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "°C"
+			},
+			{
+				"uri": "homey:device:999999997-64e8-45b4-93c5-346455b2346b",
+				"id": "measure_luminance",
+				"type": "number",
+				"title": "Helligkeit",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "lx"
+			},
+			{
+				"uri": "homey:device:999999997-64e8-45b4-93c5-346455b2346b",
+				"id": "measure_humidity",
+				"type": "number",
+				"title": "Luftfeuchtigkeit",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "%"
+			},
+			{
+				"uri": "homey:device:999999997-64e8-45b4-93c5-346455b2346b",
+				"id": "measure_ultraviolet",
+				"type": "number",
+				"title": "Ultraviolett",
+				"titleTrue": null,
+				"titleFalse": null,
+				"units": "UVI"
+			}
+		],
+		"color": "#00A2DA",
+		"data": {
+			"token": "999999990-e894-4787-b0a9-615e07ac6edd"
+		}
+	}
+}
