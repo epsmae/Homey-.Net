@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homey.Net.Sample", "Homey.Net.Sample\Homey.Net.Sample.csproj", "{AE42BA6F-90B6-49AF-8C4B-30A8C5C924D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{4EFD155A-F330-4F55-ADBD-581B462D0040}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EFD155A-F330-4F55-ADBD-581B462D0040}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EFD155A-F330-4F55-ADBD-581B462D0040}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE42BA6F-90B6-49AF-8C4B-30A8C5C924D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE42BA6F-90B6-49AF-8C4B-30A8C5C924D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE42BA6F-90B6-49AF-8C4B-30A8C5C924D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE42BA6F-90B6-49AF-8C4B-30A8C5C924D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

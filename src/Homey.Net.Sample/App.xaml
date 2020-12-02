@@ -1,0 +1,9 @@
+<Application x:Class="Homey.Net.Sample.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Homey.Net.Sample"
+             Startup="App_OnStartup">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
