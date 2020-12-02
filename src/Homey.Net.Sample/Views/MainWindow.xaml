@@ -1,0 +1,153 @@
+<mah:MetroWindow x:Class="Homey.Net.Sample.Views.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:local="clr-namespace:Homey.Net.Sample"
+                 xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                 mc:Ignorable="d"
+                 Title="MainWindow" Height="750" Width="800">
+    <Grid Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1.5*" />
+        </Grid.RowDefinitions>
+
+        <GroupBox Grid.RowSpan="2" Grid.Column="0" Grid.Row="0" Header="Authentication" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+            <StackPanel Orientation="Vertical" Margin="5">
+
+                <Label Content="IP-Address" Margin="5"/>
+                <TextBox Text="{Binding IpAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5" IsEnabled="{Binding LoginEnabled}" />
+
+                <Label Content="Access-Token"/>
+                <TextBox Text="{Binding AccessToken, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5" IsEnabled="{Binding LoginEnabled}" />
+
+                <Button Width="100" Content="Setup" Margin="5" Click="Setup_Click" IsEnabled="{Binding LoginEnabled}" HorizontalAlignment="Left"/>
+
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Grid.Column="1" Grid.Row="0" Header="Zones" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Content="Request Zones" Width="100" Margin="5" IsEnabled="{Binding RequestEnabled}" HorizontalAlignment="Left" Click="RequestZones_Click"/>
+
+                <ListBox Grid.Row="1" VerticalAlignment="Stretch" ItemsSource="{Binding Zones}" HorizontalAlignment="Stretch">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding Name}" />
+                                <TextBlock Grid.Column="1" Text="{Binding Id}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Grid.Column="1" Grid.Row="1" Header="Flows" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+
+            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Content="Request Flows" Width="100" Margin="5" IsEnabled="{Binding RequestEnabled}" HorizontalAlignment="Left" Click="RequestFlows_Click"/>
+
+                <ListBox Grid.Row="1" VerticalAlignment="Stretch" ItemsSource="{Binding Flows}" HorizontalAlignment="Stretch">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding Name}" />
+                                <TextBlock Grid.Column="1" Text="{Binding Id}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Grid.Column="1" Grid.Row="2" Header="Devices" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Content="Request Devices" Width="100" Margin="5" IsEnabled="{Binding RequestEnabled}" HorizontalAlignment="Left" Click="RequestDevices_Click"/>
+
+                <ListBox Grid.Row="1" VerticalAlignment="Stretch" ItemsSource="{Binding Devices}" HorizontalAlignment="Stretch" SelectionChanged="Devices_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding Name}" />
+                                <TextBlock Grid.Column="1" Text="{Binding Id}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Grid.Column="1" Grid.Row="3" Header="Capabilities" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+
+            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                    <Label Content="Device Id" Width="120"></Label>
+                    <Label Content="{Binding SelectedDeviceId}"></Label>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                    <Label Content="Capabilities" Width="120"></Label>
+                    <Label Content="{Binding SelectedDeviceCaps}"></Label>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                    <Label Content="Capability to set" Width="120"></Label>
+                    <TextBox Text="{Binding SelectedCap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5" IsEnabled="{Binding RequestEnabled}" Width="200"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                    <Label Content="Value to set" Width="120"></Label>
+                    <TextBox Text="{Binding SelectedValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5" IsEnabled="{Binding RequestEnabled}" Width="200"/>
+                </StackPanel>
+
+                  <Button Grid.Row="4" Width="100" Content="Set Value" Margin="5" Click="SetValue_Click" IsEnabled="{Binding RequestEnabled}" HorizontalAlignment="Left"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</mah:MetroWindow>
