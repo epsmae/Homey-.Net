@@ -4,6 +4,9 @@
 trigger:
 - none
 
+pr:
+  - master
+
 pool:
   vmImage: 'windows-latest'
   workspace:
