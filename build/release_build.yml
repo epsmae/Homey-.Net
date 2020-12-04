@@ -53,7 +53,8 @@ steps:
     command: 'pack'
     packagesToPack: '**/Homey.Net.csproj'
     configuration: '$(buildConfiguration)'
-    versioningScheme: 'off'
+    versioningScheme: 'byEnvVar'
+    versionEnvVar: 'GitVersion.NuGetVersion'
 
 - task: PublishBuildArtifacts@1
   inputs:
