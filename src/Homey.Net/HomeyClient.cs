@@ -129,6 +129,19 @@ namespace Homey.Net
         }
 
         /// <summary>
+        /// Gets the current system 
+        /// </summary>
+        /// <returns></returns>
+        public async Task<HomeySystem> GetSystem()
+        {
+            string endpoint = $"http://{_homeyIp}/api/manager/system";
+
+            return await RequestData(endpoint,
+                _client.RequestAsyncGet(endpoint, _token),
+                _responseParser.ParseSystem);
+        }
+
+        /// <summary>
         /// Set a boolean capability of a device 
         /// </summary>
         /// <param name="deviceId"></param>

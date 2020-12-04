@@ -41,6 +41,11 @@ namespace Homey.Net
             return elements.Values.ToList();
         }
 
+        public HomeySystem ParseSystem(string source)
+        {
+            return JsonConvert.DeserializeObject<HomeySystem>(source);
+        }
+
         public TransactionResponse ParseTransactionResponse(string source)
         {
             return JsonConvert.DeserializeObject<TransactionResponse>(source);

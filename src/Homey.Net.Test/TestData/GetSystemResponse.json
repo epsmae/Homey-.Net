@@ -1,0 +1,53 @@
+{
+	"bootId": "9999999-f549-4d00-bb86-e1af975967f4",
+	"cloudId": "999991fdskdjskdj05e751be5a8",
+	"hostname": "homey-99999905e75ddse5a8",
+	"platform": "linux",
+	"release": "4.14.15-g3c513a6eca",
+	"arch": "arm",
+	"uptime": 606717,
+	"loadavg": [
+		0.09228515625,
+		0.0986328125,
+		0.09521484375
+	],
+	"totalmem": 1044193280,
+	"freememMachine": 520232960,
+	"freememHuman": "50%",
+	"cpus": [
+		{
+			"model": "ARMv7 Processor rev 10 (v7l)",
+			"speed": 996,
+			"times": {
+				"user": 67415000,
+				"nice": 14803100,
+				"sys": 187547300,
+				"idle": 5735891300,
+				"irq": 0
+			}
+		},
+		{
+			"model": "ARMv7 Processor rev 10 (v7l)",
+			"speed": 996,
+			"times": {
+				"user": 61278600,
+				"nice": 14343400,
+				"sys": 168823600,
+				"idle": 5776543600,
+				"irq": 0
+			}
+		}
+	],
+	"date": "2020-12-04T20:45:54.744Z",
+	"dateHuman": "Freitag 4. Dezember 2020 21:45:54",
+	"dateDst": false,
+	"devmode": false,
+	"nodeVersion": "v12.16.1",
+	"homeyVersion": "4.2.0",
+	"homeyModelId": "homey3d",
+	"homeyModelName": "Homey Pro (Early 2019)",
+	"timezone": "Europe",
+	"wifiSsid": "WIFI",
+	"wifiAddress": "192.168.99.99:8080",
+	"wifiMac": "28:ff:9a:76:bb:09"
+}

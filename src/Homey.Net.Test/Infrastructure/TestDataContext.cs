@@ -69,5 +69,13 @@ namespace Homey.Net.Test.Infrastructure
                 return Path.Combine(TestDirectory, "SetOnOffResponse.json");
             }
         }
+
+        public string GetSystemResponse
+        {
+            get
+            {
+                return Path.Combine(TestDirectory, "GetSystemResponse.json");
+            }
+        }
     }
 }

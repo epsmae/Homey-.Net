@@ -80,6 +80,14 @@ namespace Homey.Net.Test.Infrastructure
         }
 
         [Test]
+        public async Task TestRequestSystem()
+        {
+            HomeySystem system = await _client.GetSystem();
+            Assert.NotNull(system);
+            AssertSystem(system);
+        }
+        
+        [Test]
         public async Task TestSetSwitchOn()
         {
             string id = "0e87a17f-5995-45ba-810d-37b1710acf46";
@@ -133,6 +141,16 @@ namespace Homey.Net.Test.Infrastructure
             Assert.False(string.IsNullOrEmpty(alarm.Time));
             Assert.True(alarm.NextOccurance > DateTime.MinValue);
             Assert.NotNull(alarm.Repetition);
+        }
+
+        private void AssertSystem(HomeySystem system)
+        {
+            Assert.False(string.IsNullOrEmpty(system.HomeyVersion));
+            Assert.False(string.IsNullOrEmpty(system.HomeyModelId));
+            Assert.False(string.IsNullOrEmpty(system.Hostname));
+            Assert.False(string.IsNullOrEmpty(system.NodeVersion));
+            Assert.False(string.IsNullOrEmpty(system.WifiAddress));
+            Assert.False(string.IsNullOrEmpty(system.WifiSsid));
         }
     }
 }

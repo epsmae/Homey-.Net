@@ -66,5 +66,13 @@ namespace Homey.Net.Test
             TransactionResponse response = _parser.ParseTransactionResponse(data);
             Assert.NotNull(response);
         }
+
+        [Test]
+        public void TestParseSystem()
+        {
+            string data = File.ReadAllText(_testData.GetSystemResponse);
+            HomeySystem response = _parser.ParseSystem(data);
+            Assert.NotNull(response);
+        }
     }
 }
