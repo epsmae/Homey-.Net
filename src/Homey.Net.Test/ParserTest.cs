@@ -52,6 +52,14 @@ namespace Homey.Net.Test
         }
 
         [Test]
+        public void TestParseAlarms()
+        {
+            string data = File.ReadAllText(_testData.GetAlarmsResponse);
+            IList<Alarm> response = _parser.ParseAlarms(data);
+            Assert.NotNull(response);
+        }
+
+        [Test]
         public void TestParseSetOnOff()
         {
             string data = File.ReadAllText(_testData.SetOnOff);

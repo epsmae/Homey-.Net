@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -68,7 +69,16 @@ namespace Homey.Net.Test.Infrastructure
             Assert.Greater(flows.Count, 3);
             AssertFlow(flows.First());
         }
-        
+
+        [Test]
+        public async Task TestRequestAlarms()
+        {
+            IList<Alarm> alarms = await _client.GetAlarms();
+            Assert.NotNull(alarms);
+            Assert.AreEqual(alarms.Count, 1);
+            AssertAlarm(alarms.First());
+        }
+
         [Test]
         public async Task TestSetSwitchOn()
         {
@@ -113,6 +123,16 @@ namespace Homey.Net.Test.Infrastructure
             Assert.False(string.IsNullOrEmpty(flow.Id));
             Assert.NotNull(flow.Actions);
             Assert.NotNull(flow.Conditions);
+        }
+
+        private void AssertAlarm(Alarm alarm)
+        {
+            Assert.NotNull(alarm);
+            Assert.False(string.IsNullOrEmpty(alarm.Id));
+            Assert.False(string.IsNullOrEmpty(alarm.Name));
+            Assert.False(string.IsNullOrEmpty(alarm.Time));
+            Assert.True(alarm.NextOccurance > DateTime.MinValue);
+            Assert.NotNull(alarm.Repetition);
         }
     }
 }

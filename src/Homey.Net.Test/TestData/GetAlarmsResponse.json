@@ -1,0 +1,18 @@
+{
+	"99999999-38a6-4e42-81b5-1bf042c87254": {
+		"id": "9999999-38a6-4e42-81b5-1bf042c87254",
+		"name": "Test",
+		"time": "20:47",
+		"enabled": true,
+		"repetition": {
+			"monday": true,
+			"tuesday": true,
+			"wednesday": true,
+			"thursday": true,
+			"friday": true,
+			"saturday": true,
+			"sunday": true
+		},
+		"nextOccurance": "2020-12-05T19:47:00.000Z"
+	}
+}

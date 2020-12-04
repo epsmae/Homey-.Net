@@ -116,6 +116,19 @@ namespace Homey.Net
         }
 
         /// <summary>
+        /// Gets all the available alarms
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<Alarm>> GetAlarms()
+        {
+            string endpoint = $"http://{_homeyIp}/api/manager/alarms/alarm";
+
+            return await RequestData(endpoint,
+                _client.RequestAsyncGet(endpoint, _token),
+                _responseParser.ParseAlarms);
+        }
+
+        /// <summary>
         /// Set a boolean capability of a device 
         /// </summary>
         /// <param name="deviceId"></param>
@@ -136,7 +149,7 @@ namespace Homey.Net
                 _client.RequestAsyncPut(endpoint, body, _token),
                 _responseParser.ParseTransactionResponse);
         }
-        
+
         private async Task<T> RequestData<T>(string endpoint, Task<RestResponseResult> request, Func<string, T> parse)
         {
             try

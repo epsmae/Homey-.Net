@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using NUnit.Framework;
 
 namespace Homey.Net.Test.Infrastructure
@@ -51,6 +51,14 @@ namespace Homey.Net.Test.Infrastructure
             get
             {
                 return Path.Combine(TestDirectory, "GetCapabilityReportLog.json");
+            }
+        }
+
+        public string GetAlarmsResponse
+        {
+            get
+            {
+                return Path.Combine(TestDirectory, "GetAlarmsResponse.json");
             }
         }
 
