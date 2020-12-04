@@ -3,6 +3,8 @@
 |Description      |Link        |
 |-----------------|------------|
 |Build            |[![Build Status](https://my-tech-projects.visualstudio.com/Homey-.Net/_apis/build/status/Release%20Build?branchName=master)](https://my-tech-projects.visualstudio.com/Homey-.Net/_build/latest?definitionId=12&branchName=master)|
+|Nuget            |[![Nuget](https://img.shields.io/nuget/v/Homey.Net)](https://www.nuget.org/packages/Homey.Net)|
+|Nuget Prerelease |![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Homey.Net)
 
 ## Intro
 This repo contains the source code for a C# Api for Athom's Homey.
