@@ -2,13 +2,19 @@ namespace Homey.Net.Sample
 {
     public class Info
     {
-        public string Id
+        public string Key
         {
             get;
             set;
         }
 
-        public string Name
+        public string Value
+        {
+            get;
+            set;
+        }
+
+        public string Status
         {
             get;
             set;

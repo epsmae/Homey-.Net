@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Homey.Net.Dtos
@@ -11,7 +11,7 @@ namespace Homey.Net.Dtos
         public int Step { get; set; }
         public string Uri { get; set; }
         public string Id { get; set; }
-        public int LastValue { get; set; }
+        public string LastValue { get; set; }
         public int UpdatesIn { get; set; }
     }
 }

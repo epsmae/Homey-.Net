@@ -12,7 +12,7 @@ namespace Homey.Net.Dtos
 
         public bool Enabled { get; set; }
 
-        public DateTime NextOccurance { get; set; }
+        public DateTime? NextOccurance { get; set; }
 
         public Repetition Repetition { get; set; }
     }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 using Homey.Net.Dtos;
-using Newtonsoft.Json;
 
 namespace Homey.Net
 {
