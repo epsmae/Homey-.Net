@@ -15,6 +15,7 @@ namespace Homey.Net.Test
             mock.AddResponseFile("/api/manager/devices/device/?zone=", testData.GetDevicesResponseFile);
             mock.AddResponseFile("/api/manager/devices/device/", testData.GetDeviceResponseFile);
             mock.AddResponseFile("/api/manager/devices/device", testData.GetDevicesResponseFile);
+            mock.AddResponseFile("/api/manager/alarms/alarm/", testData.GetAlarmResponse);
             mock.AddResponseFile("/api/manager/alarms/alarm", testData.GetAlarmsResponse);
             mock.AddResponseFile("api/manager/system", testData.GetSystemResponse);
 

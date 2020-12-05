@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 using Homey.Net.Dtos;
+using Newtonsoft.Json;
 
 namespace Homey.Net
 {
@@ -139,6 +140,30 @@ namespace Homey.Net
             return await RequestData(endpoint,
                 _client.RequestAsyncGet(endpoint, _token),
                 _responseParser.ParseSystem);
+        }
+
+        /// <summary>
+        /// Update an existing alarm
+        /// </summary>
+        /// <param name="alarmId"></param>
+        /// <param name="enabled"></param>
+        /// <param name="time"></param>
+        /// <param name="repetition"></param>
+        /// <returns>The updated alarm</returns>
+        public async Task<Alarm> UpdateAlarm(string alarmId, bool enabled, DayTime time, Repetition repetition)
+        {
+            string endpoint = $"http://{_homeyIp}/api/manager/alarms/alarm/{alarmId}";
+            
+            AlarmUpdate update = new AlarmUpdate
+            {
+                Repetition = repetition,
+                Enabled = enabled,
+                Time = time.ToString()
+            };
+
+            return await RequestData(endpoint,
+                _client.RequestAsyncPut(endpoint, update, _token),
+                _responseParser.ParseAlarm);
         }
 
         /// <summary>

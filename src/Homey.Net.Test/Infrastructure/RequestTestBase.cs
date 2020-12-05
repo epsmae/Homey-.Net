@@ -99,6 +99,16 @@ namespace Homey.Net.Test.Infrastructure
             Assert.False(string.IsNullOrEmpty(result.TransactionTime));
         }
 
+        [Test]
+        public async Task TestUpdateAlarm()
+        {
+            string alarmId = "db8f391f-38a6-4e42-81b5-1bf042c87254";
+            DayTime time = new DayTime(10, 15);
+            Repetition repetition = new Repetition {Friday = true, Monday = true};
+            Alarm alarm = await _client.UpdateAlarm(alarmId, true, time, repetition);
+            AssertAlarm(alarm);
+        }
+
         private static void AssertDevice(Device device)
         {
             Assert.NotNull(device);

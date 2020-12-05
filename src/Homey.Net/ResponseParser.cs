@@ -40,6 +40,10 @@ namespace Homey.Net
             Dictionary<string, Alarm> elements = JsonConvert.DeserializeObject<Dictionary<string, Alarm>>(source);
             return elements.Values.ToList();
         }
+        public Alarm ParseAlarm(string source)
+        {
+            return JsonConvert.DeserializeObject<Alarm>(source);
+        }
 
         public HomeySystem ParseSystem(string source)
         {
