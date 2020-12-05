@@ -3,7 +3,9 @@ mode: ContinuousDeployment
 next-version: 1.2.0
 branches:
   master:
+    increment: Patch
     is-release-branch: true
+    prevent-increment-of-merged-branch-version: false
     tag: 'beta'
 ignore:
   sha: []

@@ -13,15 +13,25 @@ namespace Homey.Net.Sample.ViewModel
         private string _accessToken;
         private string _ipAddress;
         private string _selectedDeviceId;
+        private string _selectedFlowId;
         private string _selectedDeviceCaps;
+        private string _selectedAlarmId;
         private string _selectedCap;
         private string _selectedValue;
+        private string _requestStatus;
+        private string _homeyVersion;
+        private string _homeyModel;
+
         private bool _loginEnabled;
         private bool _requestEnabled;
+        private bool _requestInProgress;
 
         private readonly ObservableCollection<Info> _devices;
+        private readonly ObservableCollection<Info> _alarms;
         private readonly ObservableCollection<Info> _flows;
         private readonly ObservableCollection<Info> _zones;
+        private readonly ObservableCollection<Info> _report;
+
         private HomeyClient _client;
 
         public MainViewModel()
@@ -31,11 +41,11 @@ namespace Homey.Net.Sample.ViewModel
             _requestEnabled = false;
             _loginEnabled = true;
             _devices = new ObservableCollection<Info>();
+            _alarms = new ObservableCollection<Info>();
             _flows = new ObservableCollection<Info>();
             _zones = new ObservableCollection<Info>();
+            _report = new ObservableCollection<Info>();
         }
-
-
 
         public string AccessToken
         {
@@ -80,7 +90,7 @@ namespace Homey.Net.Sample.ViewModel
         {
             get
             {
-                return _requestEnabled;
+                return _requestEnabled && !_requestInProgress;
             }
             set
             {
@@ -94,6 +104,14 @@ namespace Homey.Net.Sample.ViewModel
             get
             {
                 return _devices;
+            }
+        }
+
+        public ObservableCollection<Info> Alarms
+        {
+            get
+            {
+                return _alarms;
             }
         }
 
@@ -113,6 +131,14 @@ namespace Homey.Net.Sample.ViewModel
             }
         }
 
+        public ObservableCollection<Info> Report
+        {
+            get
+            {
+                return _report;
+            }
+        }
+
         public string SelectedDeviceId
         {
             get
@@ -125,7 +151,34 @@ namespace Homey.Net.Sample.ViewModel
                 NotifyPropertyChanged(nameof(SelectedDeviceId));
             }
         }
-        
+
+
+        public string SelectedFlowId
+        {
+            get
+            {
+                return _selectedFlowId;
+            }
+            set
+            {
+                _selectedFlowId = value;
+                NotifyPropertyChanged(nameof(SelectedFlowId));
+            }
+        }
+
+        public string SelectedAlarmId
+        {
+            get
+            {
+                return _selectedAlarmId;
+            }
+            set
+            {
+                _selectedAlarmId = value;
+                NotifyPropertyChanged(nameof(SelectedAlarmId));
+            }
+        }
+
         public string SelectedDeviceCaps
         {
             get
@@ -165,11 +218,60 @@ namespace Homey.Net.Sample.ViewModel
             }
         }
 
+        public string RequestStatus
+        {
+            get
+            {
+                return _requestStatus;
+            }
+            set
+            {
+                _requestStatus = value;
+                NotifyPropertyChanged(nameof(RequestStatus));
+            }
+        }
+
+        public bool RequestInProgress
+        {
+            get
+            {
+                return _requestInProgress;
+            }
+            set
+            {
+                _requestInProgress = value;
+                NotifyPropertyChanged(nameof(RequestEnabled));
+            }
+        }
+
+        public string HomeyVersion
+        {
+            get
+            {
+                return _homeyVersion;
+            }
+            set
+            {
+                _homeyVersion = value;
+                NotifyPropertyChanged(nameof(HomeyVersion));
+            }
+        }
+
+        public string HomeyModel
+        {
+            get
+            {
+                return _homeyModel;
+            }
+            set
+            {
+                _homeyModel = value;
+                NotifyPropertyChanged(nameof(HomeyModel));
+            }
+        }
 
         public void HandleSetup()
         {
-            LoginEnabled = false;
-            RequestEnabled = true;
             _client = new HomeyClient(_ipAddress, _accessToken);
         }
 
@@ -181,7 +283,8 @@ namespace Homey.Net.Sample.ViewModel
             
             foreach (Device device in devices)
             {
-                _devices.Add(new Info{Id = device.Id, Name = device.Name});
+                string status = device.Available ? "available" : "unavailable";
+                _devices.Add(new Info { Key = device.Id, Value = device.Name, Status = status});
             }
 
             NotifyPropertyChanged(nameof(Devices));
@@ -195,10 +298,27 @@ namespace Homey.Net.Sample.ViewModel
 
             foreach (Flow flow in flows)
             {
-                _flows.Add(new Info { Id = flow.Id, Name = flow.Name });
+                string status = flow.Enabled ? "Enabled" : "Disabled";
+                _flows.Add(new Info { Key = flow.Id, Value = flow.Name, Status = status });
             }
 
             NotifyPropertyChanged(nameof(Flows));
+        }
+
+
+        public async Task RequestAlarms()
+        {
+            _alarms.Clear();
+
+            IList<Alarm> alarms = await _client.GetAlarms();
+
+            foreach (Alarm alarm in alarms)
+            {
+                string status = alarm.Enabled ? "Enabled" : "Disabled";
+                _alarms.Add(new Info { Key = alarm.Id, Value = alarm.Name, Status = status});
+            }
+
+            NotifyPropertyChanged(nameof(Alarms));
         }
 
         public async Task RequestZones()
@@ -209,7 +329,8 @@ namespace Homey.Net.Sample.ViewModel
 
             foreach (Zone zone in zones)
             {
-                _zones.Add(new Info { Id = zone.Id, Name = zone.Name });
+                string status = zone.Active ? "Active" : "Not Active";
+                _zones.Add(new Info { Key = zone.Id, Value = zone.Name, Status = status});
             }
 
             NotifyPropertyChanged(nameof(Zones));
@@ -256,6 +377,55 @@ namespace Homey.Net.Sample.ViewModel
             {
                 throw new ArgumentException("Value is not a boolean");
             }
+        }
+
+        public async Task RequestValue()
+        {
+            Device device = await _client.GetDevice(_selectedDeviceId);
+            
+            CapabilitiesObj capObj = device.CapabilitiesObj[_selectedCap];
+            
+            SelectedValue = $"{capObj.LastUpdated:s} {capObj.Title}: {capObj.Value}{capObj.Units}";
+        }
+
+        public async Task RequestReport()
+        {
+            Report.Clear();
+
+            CapatibilityReport report = await _client.GetCapability(_selectedDeviceId, _selectedCap);
+
+            foreach (TimeValue value in report.Values)
+            {
+                _report.Add(new Info { Key = value.T.ToString("s"), Value = value.V});
+            }
+
+            NotifyPropertyChanged(nameof(Report));
+        }
+
+        public async Task EnableFlow(bool enable)
+        {
+            await _client.EnableFlow(_selectedFlowId, enable);
+        }
+
+        public async Task EnableAlarm(bool enable)
+        {
+            IList<Alarm> alarms = await _client.GetAlarms();
+
+            Alarm alarm = alarms.First(a => a.Id == _selectedAlarmId);
+
+            await _client.UpdateAlarm(_selectedAlarmId, enable, new DayTime(alarm.Time), alarm.Repetition);
+        }
+
+        public async Task TriggerFlow()
+        {
+            await _client.TriggerFlow(_selectedFlowId);
+        }
+
+        public async Task RequestSystem()
+        {
+            HomeySystem system = await _client.GetSystem();
+            HomeyVersion = system.HomeyVersion;
+            HomeyModel = system.HomeyModelName;
         }
     }
 }
