@@ -29,6 +29,11 @@ namespace Homey.Net
             return elements.Values.ToList();
         }
 
+        public bool ParseTriggerFlowResponse(string source)
+        {
+            return JsonConvert.DeserializeObject<bool>(source);
+        }
+
         public Flow ParseFlow(string source)
         {
             return JsonConvert.DeserializeObject<Flow>(source);

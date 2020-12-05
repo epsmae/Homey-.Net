@@ -126,6 +126,14 @@ namespace Homey.Net.Test.Infrastructure
         }
 
 
+        [Test]
+        public async Task TestTriggerFlow()
+        {
+            string flowId = "d812af08-e413-4b64-991c-7d81e3f35cb7";
+            bool result = await _client.TriggerFlow(flowId);
+            Assert.True(result);
+        }
+
         private static void AssertDevice(Device device)
         {
             Assert.NotNull(device);

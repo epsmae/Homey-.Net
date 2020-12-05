@@ -15,6 +15,11 @@ namespace Homey.Net
             return RequestAsync(endpoint, body, Method.PUT, bearerToken);
         }
 
+        public Task<RestResponseResult> RequestAsyncPost(string endpoint, object body, string bearerToken = null)
+        {
+            return RequestAsync(endpoint, body, Method.POST, bearerToken);
+        }
+
         private async Task<RestResponseResult> RequestAsync(string endpoint, object body, Method method, string bearerToken = null)
         {
 

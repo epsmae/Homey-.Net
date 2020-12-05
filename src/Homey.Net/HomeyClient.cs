@@ -232,6 +232,20 @@ namespace Homey.Net
                 _responseParser.ParseFlow);
         }
 
+        /// <summary>
+        /// trigger a specific flow
+        /// </summary>
+        /// <param name="flowId"></param>
+        /// <returns></returns>
+        public async Task<bool> TriggerFlow(string flowId)
+        {
+            string endpoint = $"{BaseUrl}flow/flow/{flowId}/trigger";
+
+            return await RequestData(endpoint,
+                _client.RequestAsyncPost(endpoint, null, _token),
+                _responseParser.ParseTriggerFlowResponse);
+        }
+
         private async Task<T> RequestData<T>(string endpoint, Task<RestResponseResult> request, Func<string, T> parse)
         {
             try
