@@ -36,6 +36,14 @@ namespace Homey.Net.Test
         }
 
         [Test]
+        public void TestParseFlow()
+        {
+            string data = File.ReadAllText(_testData.GetFlowResponseFile);
+            Flow response = _parser.ParseFlow(data);
+            Assert.NotNull(response);
+        }
+
+        [Test]
         public void TestParseFlows()
         {
             string data = File.ReadAllText(_testData.GetFlowsResponseFile);
@@ -50,6 +58,15 @@ namespace Homey.Net.Test
             CapatibilityReport response = _parser.ParseCapatibilityReport(data);
             Assert.NotNull(response);
         }
+
+        [Test]
+        public void TestParseAlarm()
+        {
+            string data = File.ReadAllText(_testData.GetAlarmResponse);
+            Alarm response = _parser.ParseAlarm(data);
+            Assert.NotNull(response);
+        }
+
 
         [Test]
         public void TestParseAlarms()

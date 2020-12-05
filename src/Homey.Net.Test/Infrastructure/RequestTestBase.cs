@@ -71,6 +71,14 @@ namespace Homey.Net.Test.Infrastructure
         }
 
         [Test]
+        public async Task TestRequestFlow()
+        {
+            string flowId = "d812af08-e413-4b64-991c-7d81e3f35cb7";
+            Flow flow = await _client.GetFlow(flowId);
+            AssertFlow(flow);
+        }
+
+        [Test]
         public async Task TestRequestAlarms()
         {
             IList<Alarm> alarms = await _client.GetAlarms();
@@ -108,6 +116,15 @@ namespace Homey.Net.Test.Infrastructure
             Alarm alarm = await _client.UpdateAlarm(alarmId, true, time, repetition);
             AssertAlarm(alarm);
         }
+
+        [Test]
+        public async Task TestEnableFlow()
+        {
+            string flowId = "d812af08-e413-4b64-991c-7d81e3f35cb7";
+            Flow flow = await _client.EnableFlow(flowId, false);
+            AssertFlow(flow);
+        }
+
 
         private static void AssertDevice(Device device)
         {

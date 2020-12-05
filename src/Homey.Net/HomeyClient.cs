@@ -125,6 +125,21 @@ namespace Homey.Net
         }
 
         /// <summary>
+        /// Get a specific flow
+        /// </summary>
+        /// <param name="flowId"></param>
+        /// <returns></returns>
+        public async Task<Flow> GetFlow(string flowId)
+        {
+            string endpoint = $"{BaseUrl}flow/flow/{flowId}";
+
+            return await RequestData(endpoint,
+                _client.RequestAsyncGet(endpoint, _token),
+                _responseParser.ParseFlow);
+        }
+
+
+        /// <summary>
         /// Gets all the available alarms
         /// </summary>
         /// <returns></returns>
@@ -194,6 +209,27 @@ namespace Homey.Net
             return await RequestData(endpoint,
                 _client.RequestAsyncPut(endpoint, body, _token),
                 _responseParser.ParseTransactionResponse);
+        }
+
+
+        /// <summary>
+        /// Enabled or disable a flow
+        /// </summary>
+        /// <param name="flowId"></param>
+        /// <param name="enabled"></param>
+        /// <returns>The updated flow</returns>
+        public async Task<Flow> EnableFlow(string flowId, bool enabled)
+        {
+            string endpoint = $"{BaseUrl}flow/flow/{flowId}";
+
+            var body = new
+            {
+                enabled = enabled
+            };
+
+            return await RequestData(endpoint,
+                _client.RequestAsyncPut(endpoint, body, _token),
+                _responseParser.ParseFlow);
         }
 
         private async Task<T> RequestData<T>(string endpoint, Task<RestResponseResult> request, Func<string, T> parse)

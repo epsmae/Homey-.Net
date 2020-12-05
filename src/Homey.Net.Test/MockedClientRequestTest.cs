@@ -9,6 +9,7 @@ namespace Homey.Net.Test
             TestDataContext testData = new TestDataContext();
             MockedRestTestClient mock = new MockedRestTestClient();
             mock.AddResponseFile("/capability/", testData.SetOnOff);
+            mock.AddResponseFile("/api/manager/flow/flow/", testData.GetFlowResponseFile);
             mock.AddResponseFile("/api/manager/flow/flow", testData.GetFlowsResponseFile);
             mock.AddResponseFile("/api/manager/zones/zone", testData.GetZonesResponseFile);
             mock.AddResponseFile("/api/manager/insights/log/homey:device:", testData.GetCapatibilityReport);

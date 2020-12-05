@@ -46,6 +46,14 @@ namespace Homey.Net.Test.Infrastructure
             }
         }
 
+        public string GetFlowResponseFile
+        {
+            get
+            {
+                return Path.Combine(TestDirectory, "GetFlowResponse.json");
+            }
+        }
+
         public string GetCapatibilityReport
         {
             get

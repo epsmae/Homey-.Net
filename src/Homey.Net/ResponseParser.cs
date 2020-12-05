@@ -29,6 +29,11 @@ namespace Homey.Net
             return elements.Values.ToList();
         }
 
+        public Flow ParseFlow(string source)
+        {
+            return JsonConvert.DeserializeObject<Flow>(source);
+        }
+
         public List<Flow> ParseFlows(string source)
         {
             Dictionary<string, Flow> elements = JsonConvert.DeserializeObject<Dictionary<string, Flow>>(source);
