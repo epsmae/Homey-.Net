@@ -2,7 +2,11 @@
 # Builds and tests the solution
 
 trigger:
-- master
+  tags:
+    include:
+    - '*'
+  branches:
+  - master
 
 pool:
   vmImage: 'windows-latest'
