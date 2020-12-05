@@ -7,6 +7,12 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Description>C# Api for Athom's Homey</Description>
     <RepositoryUrl>https://github.com/epsmae/Homey-.Net</RepositoryUrl>
+    <PackageReleaseNotes>Added get flow
+Added enable flow
+Added trigger flow
+Added get alarm
+Added update alarm
+Added get system</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

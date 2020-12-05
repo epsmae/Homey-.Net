@@ -12,6 +12,23 @@ It does not yet cover the complete feature set.
 There is a java script api client available https://developer.athom.com/docs/api.
 The Rest Api can be guessed according to the documentation.
 
+### Implemented commands
+
+* Get device for id
+* Get all devices
+* Get devices for zone id
+* Get capability time log
+* Gel all zones
+* Get all flows
+* Get flow for flow id
+* Get all alarms
+* Update alarm
+* Get system info
+* Set boolean capability
+* Enable flow
+* Trigger flow
+
+
 ## Sample Application
 ![Screenshot](docu/screenshot.png)
 
