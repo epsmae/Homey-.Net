@@ -28,6 +28,14 @@ namespace Homey.Net
             _responseParser = new ResponseParser();
         }
 
+        private string BaseUrl
+        {
+            get
+            {
+                return $"http://{_homeyIp}/api/manager/";
+            }
+        }
+
         /// <summary>
         /// Get all configured devices
         /// </summary>
@@ -35,7 +43,7 @@ namespace Homey.Net
         /// <returns></returns>
         public async Task<List<Device>> GetDevices()
         {
-            string endpoint = $"http://{_homeyIp}/api/manager/devices/device";
+            string endpoint = $"{BaseUrl}devices/device";
             
             return await RequestData(endpoint, 
                 _client.RequestAsyncGet(endpoint, _token),
@@ -50,7 +58,7 @@ namespace Homey.Net
         /// <returns></returns>
         public async Task<List<Device>> GetDevices(string zoneId)
         {
-            string endpoint = $"http://{_homeyIp}/api/manager/devices/device/?zone={zoneId}";
+            string endpoint = $"{BaseUrl}devices/device/?zone={zoneId}";
             
             return await RequestData(endpoint,
                 _client.RequestAsyncGet(endpoint, _token),
@@ -65,7 +73,7 @@ namespace Homey.Net
         /// <returns></returns>
         public async Task<Device> GetDevice(string deviceId)
         {
-            string endpoint = $"http://{_homeyIp}/api/manager/devices/device/{deviceId}";
+            string endpoint = $"{BaseUrl}devices/device/{deviceId}";
 
             return await RequestData(endpoint,
                 _client.RequestAsyncGet(endpoint, _token),
@@ -81,7 +89,7 @@ namespace Homey.Net
         /// <returns></returns>
         public async Task<CapatibilityReport> GetCapability(string deviceId, string capability)
         {
-            string endpoint = $"http://{_homeyIp}/api/manager/insights/log/homey:device:{deviceId}/{capability}/entry";
+            string endpoint = $"{BaseUrl}insights/log/homey:device:{deviceId}/{capability}/entry";
 
             return await RequestData(endpoint,
                 _client.RequestAsyncGet(endpoint, _token),
@@ -95,7 +103,7 @@ namespace Homey.Net
         /// <returns></returns>
         public async Task<List<Zone>> GetZones()
         {
-            string endpoint = $"http://{_homeyIp}/api/manager/zones/zone";
+            string endpoint = $"{BaseUrl}zones/zone";
 
             return await RequestData(endpoint,
                 _client.RequestAsyncGet(endpoint, _token),
@@ -109,7 +117,7 @@ namespace Homey.Net
         /// <returns></returns>
         public async Task<List<Flow>> GetFlows()
         {
-            string endpoint = $"http://{_homeyIp}/api/manager/flow/flow";
+            string endpoint = $"{BaseUrl}flow/flow";
 
             return await RequestData(endpoint,
                 _client.RequestAsyncGet(endpoint, _token),
@@ -122,7 +130,7 @@ namespace Homey.Net
         /// <returns></returns>
         public async Task<List<Alarm>> GetAlarms()
         {
-            string endpoint = $"http://{_homeyIp}/api/manager/alarms/alarm";
+            string endpoint = $"{BaseUrl}alarms/alarm";
 
             return await RequestData(endpoint,
                 _client.RequestAsyncGet(endpoint, _token),
@@ -135,7 +143,7 @@ namespace Homey.Net
         /// <returns></returns>
         public async Task<HomeySystem> GetSystem()
         {
-            string endpoint = $"http://{_homeyIp}/api/manager/system";
+            string endpoint = $"{BaseUrl}system";
 
             return await RequestData(endpoint,
                 _client.RequestAsyncGet(endpoint, _token),
@@ -152,7 +160,7 @@ namespace Homey.Net
         /// <returns>The updated alarm</returns>
         public async Task<Alarm> UpdateAlarm(string alarmId, bool enabled, DayTime time, Repetition repetition)
         {
-            string endpoint = $"http://{_homeyIp}/api/manager/alarms/alarm/{alarmId}";
+            string endpoint = $"{BaseUrl}alarms/alarm/{alarmId}";
             
             AlarmUpdate update = new AlarmUpdate
             {
@@ -176,7 +184,7 @@ namespace Homey.Net
         /// <returns></returns>
         public async Task<TransactionResponse> SetBooleanCapability(string deviceId, string capability, bool value)
         {
-            string endpoint = $"http://{_homeyIp}/api/manager/devices/device/{deviceId}/capability/{capability}";
+            string endpoint = $"{BaseUrl}devices/device/{deviceId}/capability/{capability}";
 
             var body = new
             {
