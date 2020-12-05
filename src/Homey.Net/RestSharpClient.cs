@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using RestSharp;
 
 namespace Homey.Net
@@ -15,8 +15,12 @@ namespace Homey.Net
             return RequestAsync(endpoint, body, Method.PUT, bearerToken);
         }
 
+        public Task<RestResponseResult> RequestAsyncPost(string endpoint, object body, string bearerToken = null)
+        {
+            return RequestAsync(endpoint, body, Method.POST, bearerToken);
+        }
 
-        public async Task<RestResponseResult> RequestAsync(string endpoint, object body, Method method, string bearerToken = null)
+        private async Task<RestResponseResult> RequestAsync(string endpoint, object body, Method method, string bearerToken = null)
         {
 
             IRestClient client = new RestClient(endpoint);
@@ -28,6 +32,7 @@ namespace Homey.Net
 
             RestRequest restRequest = new RestRequest(method);
             restRequest.RequestFormat = DataFormat.Json;
+            restRequest.JsonSerializer = new RestSharpJsonSerializer();
             restRequest.AddHeader("Accept", "application/json");
 
             if (body != null)

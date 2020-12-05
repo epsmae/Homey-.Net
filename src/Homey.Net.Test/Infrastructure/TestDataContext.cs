@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using NUnit.Framework;
 
 namespace Homey.Net.Test.Infrastructure
@@ -46,6 +46,22 @@ namespace Homey.Net.Test.Infrastructure
             }
         }
 
+        public string TriggerFlowResponse
+        {
+            get
+            {
+                return Path.Combine(TestDirectory, "TriggerFlowResponse.json");
+            }
+        }
+
+        public string GetFlowResponseFile
+        {
+            get
+            {
+                return Path.Combine(TestDirectory, "GetFlowResponse.json");
+            }
+        }
+
         public string GetCapatibilityReport
         {
             get
@@ -54,11 +70,35 @@ namespace Homey.Net.Test.Infrastructure
             }
         }
 
+        public string GetAlarmsResponse
+        {
+            get
+            {
+                return Path.Combine(TestDirectory, "GetAlarmsResponse.json");
+            }
+        }
+
+        public string GetAlarmResponse
+        {
+            get
+            {
+                return Path.Combine(TestDirectory, "GetAlarmResponse.json");
+            }
+        }
+
         public string SetOnOff
         {
             get
             {
                 return Path.Combine(TestDirectory, "SetOnOffResponse.json");
+            }
+        }
+
+        public string GetSystemResponse
+        {
+            get
+            {
+                return Path.Combine(TestDirectory, "GetSystemResponse.json");
             }
         }
     }

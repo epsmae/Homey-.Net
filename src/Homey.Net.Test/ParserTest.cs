@@ -36,6 +36,14 @@ namespace Homey.Net.Test
         }
 
         [Test]
+        public void TestParseFlow()
+        {
+            string data = File.ReadAllText(_testData.GetFlowResponseFile);
+            Flow response = _parser.ParseFlow(data);
+            Assert.NotNull(response);
+        }
+
+        [Test]
         public void TestParseFlows()
         {
             string data = File.ReadAllText(_testData.GetFlowsResponseFile);
@@ -52,10 +60,35 @@ namespace Homey.Net.Test
         }
 
         [Test]
+        public void TestParseAlarm()
+        {
+            string data = File.ReadAllText(_testData.GetAlarmResponse);
+            Alarm response = _parser.ParseAlarm(data);
+            Assert.NotNull(response);
+        }
+
+
+        [Test]
+        public void TestParseAlarms()
+        {
+            string data = File.ReadAllText(_testData.GetAlarmsResponse);
+            IList<Alarm> response = _parser.ParseAlarms(data);
+            Assert.NotNull(response);
+        }
+
+        [Test]
         public void TestParseSetOnOff()
         {
             string data = File.ReadAllText(_testData.SetOnOff);
             TransactionResponse response = _parser.ParseTransactionResponse(data);
+            Assert.NotNull(response);
+        }
+
+        [Test]
+        public void TestParseSystem()
+        {
+            string data = File.ReadAllText(_testData.GetSystemResponse);
+            HomeySystem response = _parser.ParseSystem(data);
             Assert.NotNull(response);
         }
     }

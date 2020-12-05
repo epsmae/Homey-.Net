@@ -18,10 +18,13 @@ namespace Homey.Net.Test.Infrastructure
             _mock = new Mock<IHomeyRestClient>();
 
             _mock.Setup(m => m.RequestAsyncGet(It.IsAny<string>(), It.IsAny<string>()))
-                .Returns((string endpoint, string token) => RequestAsyncGet(endpoint, token));
+                .Returns((string endpoint, string token) => FakeResponse(endpoint, token));
 
             _mock.Setup(m => m.RequestAsyncPut(It.IsAny<string>(), It.IsAny<object>(),It.IsAny<string>()))
-                .Returns((string endpoint, object body, string token) => RequestAsyncGet(endpoint, token));
+                .Returns((string endpoint, object body, string token) => FakeResponse(endpoint, token));
+
+            _mock.Setup(m => m.RequestAsyncPost(It.IsAny<string>(), It.IsAny<object>(), It.IsAny<string>()))
+                .Returns((string endpoint, object body, string token) => FakeResponse(endpoint, token));
         }
 
         public IHomeyRestClient Object
@@ -37,7 +40,7 @@ namespace Homey.Net.Test.Infrastructure
             _responseFiles.Add(partialEndPoint, fullResponseFilePath);
         }
         
-        private Task<RestResponseResult> RequestAsyncGet(string endpoint, string token)
+        private Task<RestResponseResult> FakeResponse(string endpoint, string token)
         {
             string fileName = GetResponseFileName(endpoint);
 

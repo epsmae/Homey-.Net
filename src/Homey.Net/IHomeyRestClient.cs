@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 
 namespace Homey.Net
 {
@@ -7,5 +7,7 @@ namespace Homey.Net
         Task<RestResponseResult> RequestAsyncGet(string endpoint, string bearerToken = null);
 
         Task<RestResponseResult> RequestAsyncPut(string endpoint, object body, string bearerToken = null);
+
+        Task<RestResponseResult> RequestAsyncPost(string endpoint, object body, string bearerToken = null);
     }
 }

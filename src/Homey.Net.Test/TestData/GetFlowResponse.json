@@ -1,0 +1,48 @@
+{
+	"id": "99999999-f616-42fb-9bef-17ca6af0edef",
+	"name": "Na",
+	"enabled": true,
+	"folder": null,
+	"order": 1,
+	"trigger": {
+		"uri": "homey:manager:flow",
+		"id": "programmatic_trigger"
+	},
+	"conditions": [
+		{
+			"uri": "homey:manager:mobile",
+			"id": "push_confirm",
+			"group": "group1",
+			"args": {
+				"user": {
+					"name": "User_1",
+					"id": "99999999-e46a-43d1-b2fb-0943932c85fd",
+					"image": "https://api.athom.com/user/999999379422020c926c0946/avatar",
+					"athomId": "999999379422020c926c0946"
+				},
+				"text": "Message_1"
+			},
+			"delay": null,
+			"duration": null
+		}
+	],
+	"actions": [
+		{
+			"uri": "homey:manager:ledring",
+			"id": "show_animation",
+			"group": "then",
+			"args": {
+				"animation": "pulse",
+				"color": "#FF0000"
+			},
+			"delay": null,
+			"duration": {
+				"number": "10",
+				"multiplier": 1
+			}
+		}
+	],
+	"broken": false,
+	"triggerable": true,
+	"triggerCount": 0
+}

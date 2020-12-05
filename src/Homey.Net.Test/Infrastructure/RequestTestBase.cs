@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -68,6 +69,31 @@ namespace Homey.Net.Test.Infrastructure
             Assert.Greater(flows.Count, 3);
             AssertFlow(flows.First());
         }
+
+        [Test]
+        public async Task TestRequestFlow()
+        {
+            string flowId = "d812af08-e413-4b64-991c-7d81e3f35cb7";
+            Flow flow = await _client.GetFlow(flowId);
+            AssertFlow(flow);
+        }
+
+        [Test]
+        public async Task TestRequestAlarms()
+        {
+            IList<Alarm> alarms = await _client.GetAlarms();
+            Assert.NotNull(alarms);
+            Assert.AreEqual(alarms.Count, 1);
+            AssertAlarm(alarms.First());
+        }
+
+        [Test]
+        public async Task TestRequestSystem()
+        {
+            HomeySystem system = await _client.GetSystem();
+            Assert.NotNull(system);
+            AssertSystem(system);
+        }
         
         [Test]
         public async Task TestSetSwitchOn()
@@ -79,6 +105,33 @@ namespace Homey.Net.Test.Infrastructure
             Assert.NotNull(result);
             Assert.False(string.IsNullOrEmpty(result.TransactionId));
             Assert.False(string.IsNullOrEmpty(result.TransactionTime));
+        }
+
+        [Test]
+        public async Task TestUpdateAlarm()
+        {
+            string alarmId = "db8f391f-38a6-4e42-81b5-1bf042c87254";
+            DayTime time = new DayTime(10, 15);
+            Repetition repetition = new Repetition {Friday = true, Monday = true};
+            Alarm alarm = await _client.UpdateAlarm(alarmId, true, time, repetition);
+            AssertAlarm(alarm);
+        }
+
+        [Test]
+        public async Task TestEnableFlow()
+        {
+            string flowId = "d812af08-e413-4b64-991c-7d81e3f35cb7";
+            Flow flow = await _client.EnableFlow(flowId, false);
+            AssertFlow(flow);
+        }
+
+
+        [Test]
+        public async Task TestTriggerFlow()
+        {
+            string flowId = "d812af08-e413-4b64-991c-7d81e3f35cb7";
+            bool result = await _client.TriggerFlow(flowId);
+            Assert.True(result);
         }
 
         private static void AssertDevice(Device device)
@@ -113,6 +166,26 @@ namespace Homey.Net.Test.Infrastructure
             Assert.False(string.IsNullOrEmpty(flow.Id));
             Assert.NotNull(flow.Actions);
             Assert.NotNull(flow.Conditions);
+        }
+
+        private void AssertAlarm(Alarm alarm)
+        {
+            Assert.NotNull(alarm);
+            Assert.False(string.IsNullOrEmpty(alarm.Id));
+            Assert.False(string.IsNullOrEmpty(alarm.Name));
+            Assert.False(string.IsNullOrEmpty(alarm.Time));
+            Assert.True(alarm.NextOccurance > DateTime.MinValue);
+            Assert.NotNull(alarm.Repetition);
+        }
+
+        private void AssertSystem(HomeySystem system)
+        {
+            Assert.False(string.IsNullOrEmpty(system.HomeyVersion));
+            Assert.False(string.IsNullOrEmpty(system.HomeyModelId));
+            Assert.False(string.IsNullOrEmpty(system.Hostname));
+            Assert.False(string.IsNullOrEmpty(system.NodeVersion));
+            Assert.False(string.IsNullOrEmpty(system.WifiAddress));
+            Assert.False(string.IsNullOrEmpty(system.WifiSsid));
         }
     }
 }

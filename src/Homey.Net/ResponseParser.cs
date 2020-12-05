@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using Homey.Net.Dtos;
 using Newtonsoft.Json;
@@ -29,10 +29,35 @@ namespace Homey.Net
             return elements.Values.ToList();
         }
 
+        public bool ParseTriggerFlowResponse(string source)
+        {
+            return JsonConvert.DeserializeObject<bool>(source);
+        }
+
+        public Flow ParseFlow(string source)
+        {
+            return JsonConvert.DeserializeObject<Flow>(source);
+        }
+
         public List<Flow> ParseFlows(string source)
         {
             Dictionary<string, Flow> elements = JsonConvert.DeserializeObject<Dictionary<string, Flow>>(source);
             return elements.Values.ToList();
+        }
+
+        public List<Alarm> ParseAlarms(string source)
+        {
+            Dictionary<string, Alarm> elements = JsonConvert.DeserializeObject<Dictionary<string, Alarm>>(source);
+            return elements.Values.ToList();
+        }
+        public Alarm ParseAlarm(string source)
+        {
+            return JsonConvert.DeserializeObject<Alarm>(source);
+        }
+
+        public HomeySystem ParseSystem(string source)
+        {
+            return JsonConvert.DeserializeObject<HomeySystem>(source);
         }
 
         public TransactionResponse ParseTransactionResponse(string source)
