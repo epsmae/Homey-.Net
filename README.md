@@ -39,7 +39,9 @@ Homey does not yet provide an access token, however you can obtain one with the 
 2. Press Login
 3. Open the browser dev tools --> F12 and switch to the Network tab
 4. Log in with your Homey mail and password
-5. Enter Bearer into the serach box
-6. You should find something like authorization: Bearer 888999-19fe-4fa0-9999-b32982499999:9c1a21da-1df4-9999-8594-46fd7e799999:c6d7b6096df10a5fd2d8888888ff447ff1ca0e9c
-in a get request similar to https://*.connect.athom.com/api/manager/sessions/session/me
-7. Use the whole token after Beaer
+    You should find a Get request "api/manager/sessions/session/me" which contains you local homey ip address if you are in the local network. Request URL: "https://LOCAL-HOMEY-IP.homey.homeylocal.com/api/manager/sessions/session/me" There you should fine something like the following under Request Header
+    "authorization: Bearer 888999-19fe-4fa0-9999-b32982499999:9c1a21da-1df4-9999-8594-46fd7e799999:c6d7b6096df10a5fd2d8888888ff447ff1ca0e9c"
+5. Use the whole token after Beaer in that case it would be "888999-19fe-4fa0-9999-b32982499999:9c1a21da-1df4-9999-8594-46fd7e799999:c6d7b6096df10a5fd2d8888888ff447ff1ca0e9c"
+
+## Obtaining local IP-Address over App
+You can check the local home ip over the app with More/Settings/General/About
