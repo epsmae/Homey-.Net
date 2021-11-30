@@ -29,8 +29,7 @@ steps:
 
 - task: gitversion/execute@0
   inputs:
-    updateAssemblyInfo: true
-    updateAssemblyInfoFilename: 'build/GitVersion.yml'
+    configFilePath: 'build/GitVersion.yml'
 
 - script: echo %Action%%BuildVersion%
   displayName: 'Set build version'
