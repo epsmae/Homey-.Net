@@ -21,11 +21,14 @@ variables:
 
 steps:
 
-- task: GitVersion@5
+- task: gitversion/setup@0
   inputs:
-    runtime: 'core'
-    configFilePath: 'build/GitVersion.yml'
+    versionSpec: '5.x'
+
+- task: gitversion/execute@0
+  inputs:
     updateAssemblyInfo: true
+    updateAssemblyInfoFilename: 'build/GitVersion.yml'
 
 
 - script: echo %Action%%BuildVersion%
