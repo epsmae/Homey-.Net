@@ -1,9 +1,6 @@
 # Integration Build
 # Builds and tests the solution
 
-trigger:
-- none
-
 pr:
   - master
 
