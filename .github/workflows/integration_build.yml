@@ -1,0 +1,61 @@
+name: .NET Integration build
+
+on:
+  pull_request:
+    branches:    
+      - master
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+
+    steps:  
+
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+        
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.9.7
+        with:
+          versionSpec: '5.x'
+
+      - name: Determine Version
+        uses: gittools/actions/gitversion/execute@v0.9.7
+        with:
+          useConfigFile: true
+          configFilePath: ./.github/Gitversion.yml
+
+      - name: Display GitVersion outputs
+        run: |
+          echo "Major: ${{ env.GitVersion_SemVer }}"
+          echo "Major: ${{ env.GitVersion_Major }}"
+          echo "Minor: ${{ env.GitVersion_Minor }}"
+          echo "Patch: ${{ env.GitVersion_Patch }}"
+          echo "AssemblySemVer: ${{ env.GitVersion_AssemblySemVer }}"
+          echo "AssemblySemFileVer: ${{ env.GitVersion_AssemblySemFileVer }}"
+
+      - name: dotnet restore
+        run:  dotnet restore ./src/Homey.Net.sln
+          
+      - name: dotnet Build
+        run: dotnet build -c Release -p:Version=${{ env.GitVersion_AssemblySemVer }} --no-restore ./src/Homey.Net.sln
+
+      - name: dotnet Test
+        run: dotnet test -c Release --no-build --verbosity normal ./src/Homey.Net.sln
+
+      - name: Pack Nuget
+        run: dotnet pack src/Homey.Net/Homey.Net.csproj -c Release -o src/Homey.Net/publish /p:Version=${{ env.GitVersion_NuGetVersion }}
+
+      - name: Upload artefact
+        uses: actions/upload-artifact@v2
+        with:
+         name: "Homey.Net_${{ env.GitVersion_NuGetVersion }}"
+         path: src/Homey.Net/publish/*.nupkg
+         if-no-files-found: error

@@ -7,12 +7,9 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Description>C# Api for Athom's Homey</Description>
     <RepositoryUrl>https://github.com/epsmae/Homey-.Net</RepositoryUrl>
-    <PackageReleaseNotes>Added get flow
-Added enable flow
-Added trigger flow
-Added get alarm
-Added update alarm
-Added get system</PackageReleaseNotes>
+    <PackageReleaseNotes>Updated vulnerable packages</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <EnablePackageValidation>true</EnablePackageValidation>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -29,11 +26,12 @@ Added get system</PackageReleaseNotes>
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="RestSharp" Version="106.11.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="RestSharp" Version="106.13.0" />
   </ItemGroup>
 
 </Project>
