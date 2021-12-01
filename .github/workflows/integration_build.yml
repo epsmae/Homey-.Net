@@ -51,11 +51,11 @@ jobs:
         run: dotnet test -c Release --no-build --verbosity normal ./src/Homey.Net.sln
 
       - name: Pack Nuget
-        run: dotnet pack src/Homey.Net/Homey.Net.csproj -c Release -o publish /p:Version=${{ env.GitVersion_NuGetVersion }}
+        run: dotnet pack src/Homey.Net/Homey.Net.csproj -c Release -o src/Homey.Net/publish /p:Version=${{ env.GitVersion_NuGetVersion }}
 
       - name: Upload artefact
         uses: actions/upload-artifact@v2
         with:
          name: "Homey.Net_${{ env.GitVersion_NuGetVersion }}"
-         path: src/**/*.nupkg
+         path: src/Homey.Net/publish/*.nupkg
          if-no-files-found: error
