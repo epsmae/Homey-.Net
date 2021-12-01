@@ -1,9 +1,11 @@
-name: .NET Integration build
+name: .NET Release build
 
 on:
-  pull_request:
+  push:
     branches:    
       - master
+    tags:        
+      - v
 
 jobs:
   build:
@@ -59,3 +61,8 @@ jobs:
          name: "Homey.Net_${{ env.GitVersion.NuGetVersion }}"
          path: src/**/*.nupkg
          if-no-files-found: error
+
+      - name: Push generated package to GitHub registry
+        run: dotnet nuget push src/Homey.Net/publish/*.nupkg --api-key ${NUGET_ORG_TOKEN} --source https://api.nuget.org/v3/index.json --skip-duplicate --no-symbols true
+        env:
+          GITHUB_TOKEN: ${{ secrets.NUGET_ORG_TOKEN }}
