@@ -2,7 +2,7 @@
 
 |Description      |Link        |
 |-----------------|------------|
-|Build            |[![Build Status](https://my-tech-projects.visualstudio.com/Homey-.Net/_apis/build/status/Release%20Build?branchName=master)](https://my-tech-projects.visualstudio.com/Homey-.Net/_build/latest?definitionId=12&branchName=master)|
+|Build            |[![Build Status](https://github.com/epsmae/Homey-.Net/actions/workflows/release_build.yml/badge.svg?branch=master)](https://github.com/epsmae/Homey-.Net/actions/workflows/release_build.yml)|
 |Nuget            |[![Nuget](https://img.shields.io/nuget/v/Homey.Net)](https://www.nuget.org/packages/Homey.Net)|
 |Nuget Prerelease |![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Homey.Net)
 
