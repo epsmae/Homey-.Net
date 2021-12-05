@@ -21,7 +21,11 @@ namespace Homey.Net.Test
             mock.AddResponseFile("/api/manager/alarms/alarm", testData.GetAlarmsResponse);
             mock.AddResponseFile("api/manager/system", testData.GetSystemResponse);
 
-            return new HomeyClient(mock.Object, "192.168.99.99:80", "1234");
+            HomeyClient client = new HomeyClient(mock.Object);
+            client.HomeyIp = "192.168.99.99:80";
+            client.Token = "1234";
+
+            return client;
         }
     }
 }

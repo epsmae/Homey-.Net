@@ -12,6 +12,8 @@ namespace Homey.Net.Sample.ViewModel
     {
         private string _accessToken;
         private string _ipAddress;
+        private string _userName;
+        private string _password;
         private string _selectedDeviceId;
         private string _selectedFlowId;
         private string _selectedDeviceCaps;
@@ -34,10 +36,22 @@ namespace Homey.Net.Sample.ViewModel
 
         private HomeyClient _client;
 
+        // client id and client secret from: https://tools.developer.homey.app/api/projects
+        // cloud id from: https://tools.developer.homey.app/tools/system 
+        private static HomeyApiConfig _apiConfig = new HomeyApiConfig
+        {
+            ClientId = "<CLIENT_ID>",
+            ClientSecret = "<CLIENT_SECRET>",
+            CloudId = "<CLOUD_ID>"
+        };
+
         public MainViewModel()
         {
-            _accessToken = "c643-46bf-8e67-29f0d9d64255:36df75c90a909a27c0a5ae597f78c8829554796b";
-            _ipAddress = "192.168.5.88:80";
+            _accessToken = string.Empty;
+            _ipAddress = string.Empty;
+            _userName = string.Empty;
+            _password = string.Empty;
+
             _requestEnabled = false;
             _loginEnabled = true;
             _devices = new ObservableCollection<Info>();
@@ -45,6 +59,8 @@ namespace Homey.Net.Sample.ViewModel
             _flows = new ObservableCollection<Info>();
             _zones = new ObservableCollection<Info>();
             _report = new ObservableCollection<Info>();
+
+            _client = new HomeyClient();
         }
 
         public string AccessToken
@@ -70,6 +86,32 @@ namespace Homey.Net.Sample.ViewModel
             {
                 _ipAddress = value;
                 NotifyPropertyChanged(nameof(IpAddress));
+            }
+        }
+
+        public string UserName
+        {
+            get
+            {
+                return _userName;
+            }
+            set
+            {
+                _userName = value;
+                NotifyPropertyChanged(nameof(UserName));
+            }
+        }
+
+        public string Password
+        {
+            get
+            {
+                return _password;
+            }
+            set
+            {
+                _password = value;
+                NotifyPropertyChanged(nameof(Password));
             }
         }
 
@@ -270,9 +312,15 @@ namespace Homey.Net.Sample.ViewModel
             }
         }
 
-        public void HandleSetup()
+        public void UpdateHomeyInfo()
         {
-            _client = new HomeyClient(_ipAddress, _accessToken);
+            _client.HomeyIp = _ipAddress;
+            _client.Token = _accessToken;
+        }
+
+        public async Task ObtainBearerToken()
+        {
+            AccessToken = await _client.Authenticate(_apiConfig, _userName, _password);
         }
 
         public async Task RequestDevices()

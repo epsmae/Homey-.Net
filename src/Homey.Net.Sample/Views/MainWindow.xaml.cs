@@ -22,6 +22,11 @@ namespace Homey.Net.Sample.Views
             DataContext = _viewModel;
         }
 
+        private async void Login_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            await TryExecute(_viewModel.ObtainBearerToken());
+        }
+
         private async void Setup_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             await TryExecute(Init());
@@ -32,7 +37,7 @@ namespace Homey.Net.Sample.Views
             try
             {
                 _viewModel.LoginEnabled = false;
-                _viewModel.HandleSetup();
+                _viewModel.UpdateHomeyInfo();
 
                 await _viewModel.RequestSystem();
 
