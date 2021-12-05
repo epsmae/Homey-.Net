@@ -11,7 +11,12 @@ namespace Homey.Net.Test
 
         public override HomeyClient SetupClient()
         {
-            return new HomeyClient(HomeyIp, BearerToken);
+            HomeyClient client = new HomeyClient
+            {
+                Token = BearerToken,
+                HomeyIp = HomeyIp
+            };
+            return client;
         }
     }
 }

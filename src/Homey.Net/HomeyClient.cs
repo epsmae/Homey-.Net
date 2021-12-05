@@ -2,29 +2,32 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
+using Homey.Net.Auth;
 using Homey.Net.Dtos;
 
 namespace Homey.Net
 {
     public class HomeyClient
     {
-        private readonly string _homeyIp;
-        private readonly string _token;
+        private string _homeyIp;
+        private string _token;
         private readonly IHomeyRestClient _client;
 
         private readonly ResponseParser _responseParser;
+        private readonly Authentication _authentication;
 
-        public HomeyClient(string homeyIp, string token)
-            :this(new RestSharpClient(), homeyIp, token)
+        public HomeyClient()
+            :this(new RestSharpClient())
         {
         }
 
-        public HomeyClient(IHomeyRestClient client, string homeyIp, string token)
+        public HomeyClient(IHomeyRestClient client)
         {
-            _homeyIp = homeyIp;
-            _token = token;
+            _homeyIp = string.Empty;
+            _token = string.Empty;
             _client = client;
             _responseParser = new ResponseParser();
+            _authentication = new Authentication();
         }
 
         private string BaseUrl
@@ -34,6 +37,54 @@ namespace Homey.Net
                 return $"http://{_homeyIp}/api/manager/";
             }
         }
+
+        /// <summary>
+        /// Bearer token to aceess the homey
+        /// </summary>
+        public string Token
+        {
+            get
+            {
+                return _token;
+            }
+
+            set
+            {
+                _token = value;
+            }
+        }
+
+        /// <summary>
+        /// Ip Address of the homey
+        /// </summary>
+        public string HomeyIp
+        {
+            get
+            {
+                return _homeyIp;
+            }
+
+            set
+            {
+                _homeyIp = value;
+            }
+        }
+
+        /// <summary>
+        /// Authenticates to get the access token
+        /// This also interally sets the authentication token
+        /// </summary>
+        /// <param name="config"></param>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public async Task<string> Authenticate(HomeyApiConfig config, string username, string password)
+        {
+            _token = await _authentication.Login(config, username, password);
+
+            return _token;
+        }
+
 
         /// <summary>
         /// Get all configured devices
@@ -249,12 +300,19 @@ namespace Homey.Net
         {
             try
             {
+                EnsureAccessInformationSet();
+
                 RestResponseResult result = await request;
 
                 EnsureStatusCodeOk(endpoint, result);
 
                 return parse(result.Content);
             }
+            catch (HomeyAccessException)
+            {
+                throw;
+            }
+
             catch (HomeyRequestException)
             {
                 throw;
@@ -279,5 +337,20 @@ namespace Homey.Net
                 };
             }
         }
+
+        private void EnsureAccessInformationSet()
+        {
+
+            if (string.IsNullOrEmpty(_token))
+            {
+                throw new HomeyAccessException("Access token not set either set the AccessToken or use Authenticate to fetch it");
+            }
+
+            if (string.IsNullOrEmpty(_homeyIp))
+            {
+                throw new HomeyAccessException("IP Address of the homey must be set");
+            }
+
+        } 
     }
 }
